@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Amazon...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // WebView detection
+    function isInWebView() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Instagram|Messenger|Line|TikTok/i.test(ua);
+    }
+
+    window.onload = function() {
+      if (isInWebView()) {
+        // Show instruction image
+        document.getElementById("fallback").style.display = "block";
+        document.getElementById("redirect").style.display = "none";
+      } else {
+        // Redirect to Amazon
+        window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753118277999";
+      }
+    };
+  </script>
+</head>
+<body style="margin: 0; background-color: #333; color: #fff; text-align: center; font-family: Arial, sans-serif;">
+
+  <!-- Redirecting Message -->
+  <div id="redirect" style="padding: 50px;">
+    <h2>Redirecting to Amazon...</h2>
+    <p>Please wait or <a href="https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753118277999" style="color: #00f;">click here</a>.</p>
+  </div>
+
+  <!-- Fallback for WebView -->
+  <div id="fallback" style="display: none; padding: 20px;">
+    <img src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in browser" style="max-width: 90%; height: auto; border-radius: 8px;">
+    <p style="margin-top: 20px; font-size: 16px;">To get the best experience, click <b>⋮</b> in the top right and select <b>“Open in browser”</b></p>
+  </div>
+
+</body>
+</html>
