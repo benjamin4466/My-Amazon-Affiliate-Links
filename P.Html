@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Amazon</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    img {
+      width: 250px;
+      margin: 20px 0;
+    }
+    .message {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .fallback {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Redirecting... Please wait</h2>
+
+<script>
+  // Check if TikTok or Instagram in-app browser
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const isInApp = ua.includes("TikTok") || ua.includes("Instagram") || ua.includes("FBAV");
+
+  if (isInApp) {
+    // In TikTok or Instagram App — show image
+    document.write("<p class='message'>⚠️ Please open this link in your browser</p>");
+    document.write("<IMG_20250721_203226.jpg='https://benjamin4466.github.io/My-Amazon-Affiliate-Links/open-in-browser.png' alt='Open in Browser'>");
+    document.write("<p class='fallback'><a href='https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753113467397'>Click here if nothing happens</a></p>");
+  } else {
+    // In browser — redirect to Amazon
+    window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753113467397";
+  }
+</script>
+
+</body>
+</html>
