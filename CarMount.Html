@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 48px;
+      color: yellow;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .message {
+      font-size: 20px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="arrow">⬆️</div>
+  <div class="message">
+    ⚠️ Tap the three dots (⋮) above<br>
+    and select <strong>"Open in browser"</strong> to continue.
+  </div>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = "https://www.amazon.com/dp/B0DKP3C2ZZ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2A5ERK32E5NI1&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.2A5ERK32E5NI1_1753228040664";
+    }, 20000); // 20 seconds
+  </script>
+</body>
+</html>
