@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open in Browser</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .arrow {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 80px;
+      color: yellow;
+      transform: rotate(-90deg);
+    }
+    .message {
+      margin-top: 120px;
+      font-size: 24px;
+      color: red;
+    }
+    .disclosure {
+      font-size: 14px;
+      color: white;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="arrow">➤</div>
+  <div class="message">
+    For best experience,<br>
+    please <strong>Open this page in your Browser</strong>.<br><br>
+    براہ کرم اس صفحے کو اپنے براؤزر میں کھولیں
+  </div>
+
+  <div class="disclosure">
+    <p>I am an Amazon affiliate. If you buy through my link, I may earn a small commission without any extra cost to you.</p>
+  </div>
+
+  <script>
+    // Function to detect if user is using in-app browser
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Instagram|Line|Twitter|WhatsApp|LinkedIn|Snapchat|Pinterest|Messenger|TikTok/i.test(ua);
+    }
+
+    // If NOT in app browser, redirect to Amazon
+    if (!isInAppBrowser()) {
+      setTimeout(() => {
+        window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753144413895";
+      }, 5000); // Delay 5 seconds for better UX
+    }
+  </script>
+
+</body>
+</html>
