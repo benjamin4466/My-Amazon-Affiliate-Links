@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirect Notice</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+    }
+    .arrow {
+      font-size: 80px;
+      color: yellow;
+      animation: bounce 1.2s infinite;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .message {
+      font-size: 22px;
+      margin-top: 100px;
+    }
+    .disclosure {
+      font-size: 16px;
+      margin-top: 30px;
+      color: gray;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="arrow">⬇️</div>
+  <div class="message">
+    🔗 For best experience, please open this link in your <strong>web browser</strong>.<br><br>
+    📱 Tap the <strong>3 Dots</strong> above and choose <strong>“Open in Browser”</strong>.
+  </div>
+  <div class="disclosure">
+    ⚠️ I am an Amazon Affiliate. If you open the product in a browser and purchase, I may earn a small commission — at no extra cost to you.<br><br>
+    ✅ Thank you for supporting!
+  </div>
+
+  <script>
+    // Redirect only if opened in browser
+    const isInAppBrowser = /FBAN|FBAV|Instagram|Twitter|Pinterest|LinkedIn|TikTok|Snapchat/i.test(navigator.userAgent);
+    if (!isInAppBrowser) {
+      window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753144413895";
+    }
+  </script>
+</body>
+</html>
