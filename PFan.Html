@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .arrow {
+      font-size: 60px;
+      color: yellow;
+      animation: bounce 1s infinite;
+      margin-top: 20px;
+    }
+    .message {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .disclosure {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 50px;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="arrow">⬇️</div>
+
+  <div class="message">
+    I am an Amazon Affiliate.<br>
+    Please click the 3 dots above and select<br>
+    <strong>"Open in browser"</strong> for best experience.
+  </div>
+
+  <div class="disclosure">
+    You'll be redirected to Amazon only after opening this page in a web browser.
+  </div>
+
+  <script>
+    // Only redirect if user is in a standalone browser
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isInApp = /FBAN|FBAV|Instagram|Twitter|Pinterest|TikTok|Snapchat|WebView/i.test(userAgent);
+
+    if (!isInApp) {
+      window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753144413895";
+    }
+  </script>
+
+</body>
+</html>
