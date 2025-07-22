@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Amazon...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 60px 20px;
+    }
+    .arrow {
+      font-size: 80px;
+      color: yellow;
+      margin-bottom: 20px;
+    }
+    .message {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    .disclosure {
+      font-size: 16px;
+      color: gray;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="arrow">⬆️</div>
+  <div class="message">Please tap the 3 dots above and select<br><b>"Open in browser"</b> to view this product on Amazon.</div>
+
+  <div class="disclosure">
+    As an Amazon Associate I earn from qualifying purchases.<br>
+    For best experience, always open in Chrome or Safari.
+  </div>
+
+  <script>
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Instagram|TikTok|Pinterest|MicroMessenger|Line|Snapchat/i.test(ua);
+    }
+
+    if (!isInAppBrowser()) {
+      // Not an in-app browser, safe to redirect
+      window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753144413895";
+    }
+  </script>
+
+</body>
+</html>
