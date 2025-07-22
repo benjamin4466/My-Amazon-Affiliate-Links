@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Redirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+    }
+    .arrow {
+      font-size: 80px;
+      color: yellow;
+      margin-bottom: 20px;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .disclaimer {
+      font-size: 16px;
+      color: #aaa;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    // Redirect only if in real browser (not in-app)
+    window.onload = function () {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const inAppBrowser = /(FBAN|FBAV|Instagram|Pinterest|Line|TikTok|Snapchat|Twitter)/i.test(userAgent);
+
+      if (!inAppBrowser) {
+        window.location.href = "https://www.amazon.com/dp/B0D97YVVQ2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1FBBGH2M67LKO&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1FBBGH2M67LKO_1753144413895";
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="arrow">⬇️</div>
+  <div class="message">
+    <strong>Please click the 3 dots at the top-right and select<br> “Open in Browser”</strong><br><br>
+    For best Amazon experience.
+  </div>
+  <div class="disclaimer">
+    Affiliate Disclosure: This link is part of the Amazon Affiliate Program. We may earn a commission if you purchase through this link.
+  </div>
+</body>
+</html>
