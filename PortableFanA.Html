@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: white;
+      font-family: sans-serif;
+    }
+    .container {
+      position: relative;
+      max-width: 90%;
+    }
+    img {
+      width: 100%;
+      max-width: 400px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+    .text-overlay {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .arrow {
+      margin-top: 20px;
+      font-size: 22px;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in Browser">
+    <div class="text-overlay">
+      Click on 3 Dots (⠇) Above &<br> Select “Open in Browser”
+    </div>
+  </div>
+  <div class="arrow">⬆️</div>
+</body>
+</html>
