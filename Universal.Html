@@ -1,0 +1,75 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser to Continue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: yellow;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 70px;
+      transform: rotate(45deg);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .redirect-info {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="arrow">↑</div>
+    <h1>Click on Three Dots... Above and Select<br> "Open in Browser"</h1>
+    <p class="redirect-info">Redirecting in <span id="countdown">20</span> seconds...</p>
+  </div>
+
+  <script>
+    // 👉 Yahan 
+    const redirectUrl = "https://www.amazon.com/dp/B0F5N37QMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1XM4VC2P1LNSA&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1XM4VC2P1LNSA_1753275384024";
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isSocialApp = /instagram|fb|facebook|pinterest|tiktok/.test(userAgent);
+    const waitTime = isSocialApp ? 20000 : 1000; // 20s for social, 1s for browsers
+
+    // Countdown logic
+    let countdown = isSocialApp ? 20 : 1;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      countdown--;
+      countdownEl.textContent = countdown;
+      if (countdown <= 0) clearInterval(interval);
+    }, 1000);
+
+    // Redirect
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, waitTime);
+  </script>
+</body>
+</html>
