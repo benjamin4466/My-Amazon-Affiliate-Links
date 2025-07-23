@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser to Continue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: yellow;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 8rem;
+      color: yellow;
+      animation: blink 1s infinite;
+      transform: rotate(-45deg);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ Please tap the three dots <br> and select "Open in browser" to continue</h1>
+  <div class="arrow">⬆</div>
+
+  <script>
+    const amazonLink = "https://www.amazon.com/dp/B0F5N37QMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1XM4VC2P1LNSA&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1XM4VC2P1LNSA_1753281064475";
+
+    // Agar page browser ke andar khula ho (not in app/iframe), tabhi redirect karo
+    if (window.top === window.self) {
+      // Direct browser, so redirect instantly
+      window.location.href = amazonLink;
+    } else {
+      // App browser hai, kuch bhi na karo — sirf message show karo 30 seconds tak
+      setTimeout(() => {
+        // Still do nothing — just let user read
+      }, 30000);
+    }
+  </script>
+</body>
+</html>
