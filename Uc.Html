@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: yellow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      font-size: 8rem;
+      color: yellow;
+      animation: blink 1s infinite;
+      transform: rotate(-45deg);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>👉 Please tap the three dots<br>and open in browser to continue</h1>
+  <div class="arrow">⬆</div>
+
+  <script>
+    const amazonLink = "https://www.amazon.com/dp/B0F5N37QMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1XM4VC2P1LNSA&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1XM4VC2P1LNSA_1753280375388";
+
+    // Sirf agar window.top === window.self (means not inside iframe or app browser), tabhi redirect karo
+    function isTopWindow() {
+      return window.top === window.self;
+    }
+
+    setTimeout(() => {
+      if (isTopWindow()) {
+        window.location.href = amazonLink;
+      }
+      // Agar app browser ho, to sirf message dikhao — redirect mat karo
+    }, 20000);
+  </script>
+</body>
+</html>
