@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: yellow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: 60px;
+      background: yellow;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 22px;
+      }
+      .arrow {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="arrow"></div>
+  <p><strong>Click on Three Dots... Above and select<br>Open in Browser</strong></p>
+
+  <script>
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FB|Instagram|FBAN|FBAV|TikTok|Pinterest/i.test(ua);
+    }
+
+    const amazonLink = "https://www.amazon.com/dp/B0F63KT1QM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1DM5ZH87T0W2V&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1DM5ZH87T0W2V_1753244289811";
+
+    setTimeout(function() {
+      window.location.href = amazonLink;
+    }, isInAppBrowser() ? 30000 : 1000);
+  </script>
+</body>
+</html>
