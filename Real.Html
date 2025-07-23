@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #ffd700; /* Yellow text */
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+    .message {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 100px;
+    }
+    .arrow {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 60px;
+      color: #ffd700;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="arrow">⬆️</div>
+  <div class="message">
+    Click on Three Dots... Above<br>and Select <b>Open in Browser</b>
+  </div>
+
+  <script>
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isSocialApp = /fb|instagram|tiktok|pinterest|snapchat/.test(userAgent);
+
+    // 🔁 PASTE YOUR AMAZON LINK BELOW
+    const amazonLink = "https://www.amazon.com/dp/B0F5N37QMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1XM4VC2P1LNSA&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1XM4VC2P1LNSA_1753277350727";
+
+    const redirectTime = isSocialApp ? 20000 : 1000; // 20s for social apps, 1s for browsers
+
+    setTimeout(() => {
+      window.location.href = amazonLink;
+    }, redirectTime);
+  </script>
+</body>
+</html>
