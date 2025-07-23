@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: yellow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      font-size: 4rem;
+      color: yellow;
+      animation: blink 1s infinite;
+      transform: rotate(-45deg);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>👉 Please tap the three dots and open in browser to continue</h1>
+  <div class="arrow">⬆</div>
+
+  <script>
+    const amazonLink = "https://www.amazon.com/dp/B0F5N37QMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1XM4VC2P1LNSA&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1XM4VC2P1LNSA_1753278904722";
+
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Instagram|Line|Messenger|Snapchat|TikTok|Twitter|WhatsApp|WeChat|LinkedIn/i.test(ua);
+    }
+
+    if (!isInAppBrowser()) {
+      // If not in app browser, redirect immediately
+      window.location.href = amazonLink;
+    } else {
+      // In app browser - wait 20 seconds, then try redirect
+      setTimeout(() => {
+        window.location.href = amazonLink;
+      }, 20000);
+    }
+  </script>
+</body>
+</html>
