@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Redirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 72px;
+      color: yellow;
+      animation: bounce 1.5s infinite;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .message {
+      margin-top: 80px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      color: #ffd700;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    const amazonLink = "https://www.amazon.com/dp/B0DR4QJZ6T?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1AGFQIH1N7VV7&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.1AGFQIH1N7VV7_1753321177291";
+
+    function isInWebView() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Instagram|Messenger|Line|TikTok|WebView/i.test(ua);
+    }
+
+    window.onload = function () {
+      if (!isInWebView()) {
+        window.location.href = amazonLink;
+      } else {
+        setTimeout(() => {
+          window.location.href = amazonLink;
+        }, 20000); // Wait 20 sec in in-app browser
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <div class="arrow">⬆️</div>
+
+  <div class="message">
+    ⚠️ Tap the <b>three dots ⋮</b> above<br>
+    and select <b>"Open in browser"</b> to continue.
+  </div>
+
+  <img src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in browser">
+</body>
+</html>
