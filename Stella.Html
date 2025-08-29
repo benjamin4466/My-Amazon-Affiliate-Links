@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Redirect - Stella.Html</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 72px;
+      color: yellow;
+      animation: bounce 1.5s infinite;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .message {
+      margin-top: 80px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      color: #ffd700;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    const amazonLink =amazonUrl = "https://sites.google.com/view/myaffiliatelinkbio/home"; // <-- Replace this
+
+  function isTikTokBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    return ua.includes('tiktok');
+  }
+
+  function openInBrowser() {
+    window.open(window.location.href, '_blank');
+  }
+
+  function startCountdown(seconds) {
+    const countdownEl = document.getElementById("countdown");
+    let timeLeft = seconds;
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = https://sites.google.com/view/myaffiliatelinkbio/home;
+      }
+    }, 1000);
+  }
+
+  if (!isTikTokBrowser()) {
+    // If not TikTok browser, go directly to Amazon
+    window.location.href = https://sites.google.com/view/myaffiliatelinkbio/home;
+  } else {
+    // Show timer and wait 30 seconds
+    startCountdown(30);
+  }
+</script>
