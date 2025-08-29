@@ -1,0 +1,101 @@
+title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #000;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      font-size: 72px;
+      color: yellow;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .button {
+      background: yellow;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .link-box {
+      background: #444;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      word-break: break-all;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .copy-confirm {
+      margin-top: 10px;
+      color: lightgreen;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="arrow">⬆️</div>
+  <h2>Please Open in Your Browser</h2>
+  <p>This page cannot open correctly in the TikTok app.</p>
+  <p>Tap the 3-dot menu above ⬆ and select <strong>“Open in browser”</strong> (Chrome or Safari).</p>
+
+  <div class="link-box" id="copyLink">https://sites.google.com/view/myaffiliatelinkbio/home</div>
+  <button class="button" onclick="copyLink()">📋 Copy Link</button>
+  <button class="button" onclick="openInNewTab()">🌐 Open in Browser</button>
+  <div class="copy-confirm" id="copyConfirm">Link copied!</div>
+</div>
+
+<script>
+  const amazonUrl = "https://sites.google.com/view/myaffiliatelinkbio/home"; // replace this
+
+  function isTikTokBrowser() {
+    return navigator.userAgent.toLowerCase().includes('tiktok');
+  }
+
+  function copyLink() {
+    const el = document.createElement('textarea');
+    el.value = amazonUrl;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    document.getElementById('copyConfirm').style.display = 'block';
+  }
+
+  function openInNewTab() {
+    window.open(amazonUrl, '_blank');
+  }
+
+  // Auto redirect if NOT TikTok
+  if (!isTikTokBrowser()) {
+    window.location.href = amazonUrl;
+  }
+</script>
+
+</body>
+</html>
