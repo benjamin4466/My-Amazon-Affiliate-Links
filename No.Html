@@ -91,7 +91,7 @@ title>
     window.open(amazonUrl, '_blank');
   }
 
-  // Don't Auto redirect  if NOT TikTok
+  //  Auto redirect after 30Sec if NOT TikTok
   if (!isTikTokBrowser()) {
     window.location.href = amazonUrl;
   }
