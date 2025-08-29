@@ -1,0 +1,107 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Redirect<HackyBioSite.Html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 72px;
+      color: yellow;
+      animation: bounce 1.5s infinite;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .message {
+      margin-top: 100px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .button {
+      margin-top: 20px;
+      background-color: yellow;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .timer {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="arrow">⬆️</div>
+
+<div class="message">
+  <h2>Open in Browser</h2>
+  <p>This page does not work properly inside the TikTok app.</p>
+  <p><strong>Please open it in Chrome or Safari to continue.</strong></p>
+  <p class="timer">Redirecting in <span id="countdown">30</span> seconds...</p>
+  <button class="button" onclick="openInBrowser()">Open in Browser Now</button>
+</div>
+
+<script>
+  const amazonUrl = "https://sites.google.com/view/myaffiliatelinkbio/home"; // <-- Replace this
+
+  function isTikTokBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    return ua.includes('tiktok');
+  }
+
+  function openInBrowser() {
+    window.open(window.location.href, '_blank');
+  }
+
+  function startCountdown(seconds) {
+    const countdownEl = document.getElementById("countdown");
+    let timeLeft = seconds;
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = https://sites.google.com/view/myaffiliatelinkbio/home;
+      }
+    }, 1000);
+  }
+
+  if (!isTikTokBrowser()) {
+    // If not TikTok browser, go directly to Amazon
+    window.location.href = https://sites.google.com/view/myaffiliatelinkbio/home;
+  } else {
+    // Show timer and wait 30 seconds
+    startCountdown(30);
+  }
+</script>
+
+</body>
+</html>
