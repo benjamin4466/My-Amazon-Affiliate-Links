@@ -1,3 +1,6 @@
+TikTok (aur kuch doosri apps) ka in-app browser aapki website ko embed karke chalaata hai — is wajah se user ka actual browser nahi khulta, aur affiliate cookies track nahi hoti. Aap JavaScript ka use karke detect kar sakte ho agar page TikTok ke browser mein open ho raha hai, aur us surat mein user ko force kar sakte ho ke woh page ko Chrome/Safari mein kholein.
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,47 +37,52 @@
       margin-top: 80px;
       background-color: #222;
       padding: 20px;
-      border-radius: 12px;
-      font-size: 20px;
-      color: #ffd700;
+      border-radius: 8px;
       display: inline-block;
     }
 
-    img {
-      max-width: 90%;
-      border-radius: 10px;
-      margin-top: 40px;
+    .button {
+      margin-top: 20px;
+      background-color: yellow;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
-
-  <script>
-    const amazonLink = "https://sites.google.com/view/myaffiliatelinkbio/home";
-
-    function isInWebView() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /FBAN|FBAV|Instagram|Messenger|Line|TikTok|WebView/i.test(ua);
-    }
-
-    window.onload = function () {
-      if (!isInWebView()) {
-        window.location.href = amazonLink;
-      } else {
-        setTimeout(() => {
-          window.location.href = amazonLink;
-        }, 20000); // Wait 20 sec in in-app browser
-      }
-    };
-  </script>
 </head>
-
 <body>
-  <div class="arrow">⬆️</div>
 
-  <div class="message">
-    ⚠️ Tap the <b>three dots ⋮</b> above<br>
-    and select <b>"Open in browser"</b> to continue.
-  </div>
+<div class="arrow">⬆️</div>
 
-  <img src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in browser">
+<div class="message">
+  <h2>Open in Browser</h2>
+  <p>This page does not work properly inside the TikTok app.</p>
+  <p><strong>Please open it in your default browser (like Chrome or Safari).</strong></p>
+  <button class="button" onclick="openInBrowser()">Open in Browser</button>
+</div>
+
+<script>
+  function isTikTokBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    return ua.includes('tiktok');
+  }
+
+  function openInBrowser() {
+    // Try to open in a new tab
+    const url = window.location.href;
+    window.open(url, '_blank');
+  }
+
+  if (!isTikTokBrowser()) {
+    // Redirect to Amazon if not TikTok
+    window.location.href = "https://www.amazon.in/dp/YOUR_PRODUCT_ID?tag=YOURTAG-21";
+  }
+</script>
+
 </body>
 </html>
+
+
