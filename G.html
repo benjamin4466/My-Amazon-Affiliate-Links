@@ -1,0 +1,57 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Chrome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .button {
+      background-color: #4285F4;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .note {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Open in Chrome</h2>
+  <p>Click the button below to open this page directly in Chrome browser.</p>
+
+  <button class="button" onclick="openInChrome()">Open in Chrome</button>
+
+  <div class="note" id="note"></div>
+
+  <script>
+    function openInChrome() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        // Android: Try to open in Chrome
+        window.location.href = "intent://womensfashionafforfale.blogspot.com/p/as-amazon-associate-i-earn-commission.html#Intent;scheme=https;package=com.android.chrome;end;";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS: Show instruction
+        document.getElementById("note").innerText = "iPhone users: Please tap the share button in Safari and choose 'Open in Browser'.";
+      } else {
+        // Other devices
+        window.location.href = "https://womensfashionafforfale.blogspot.com/p/as-amazon-associate-i-earn-commission.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
