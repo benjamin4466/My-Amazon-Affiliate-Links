@@ -1,0 +1,83 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <https://bestbathroomfinds.blogspot.com/p/blog-page.html>Continue in Browser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #f0f0f0;
+    }
+    .message {
+      margin-top: 50px;
+      font-size: 20px;
+      color: #333;
+    }
+    .arrow {
+      margin: 20px auto;
+      width: 30px;
+      height: 30px;
+      border-left: 5px solid #333;
+      border-bottom: 5px solid #333;
+      transform: rotate(45deg);
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0) rotate(45deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="blockedMessage" class="message" style="display:none;">
+    <div class="arrow"></div>
+    <p><strong>Click on the three dots (⋮) above</strong><br>and select <strong>"Open in browser"</strong> to continue.</p>
+  </div>
+
+  <div id="mainContent" style="display:none;">
+    <h1>Welcome to My Website!</h1>
+    <p>You are using a real browser. 🎉</p>
+  </div>
+
+  <script>
+    function isInAppBrowser() {
+      const ua = navigator.userAgent.toLowerCase();
+      const inAppKeywords = [
+        'tiktok',
+        'instagram',
+        'fbav',         // Facebook
+        'fban',         // Facebook App
+        'line',
+        'wechat',
+        'snapchat',
+        'twitter',
+        'pinterest',
+        'duckduckgo',
+        'webview',
+        'wv'
+      ];
+
+      return inAppKeywords.some(keyword => ua.includes(keyword));
+    }
+
+    window.onload = function () {
+      if (isInAppBrowser()) {
+        // Show message to open in browser
+        document.getElementById('blockedMessage').style.display = 'block';
+      } else {
+        // Allow content to show
+        document.getElementById('mainContent').style.display = 'block';
+      }
+    };
+  </script>
+
+</body>
+</html>
