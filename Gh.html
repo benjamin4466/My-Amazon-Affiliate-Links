@@ -42,7 +42,8 @@
 
       if (/android/i.test(userAgent)) {
         // Android: Try to open in Chrome
-        window.location.href = "intent:https://goldjewlleryhaul.blogspot.com/p/best-amazon-finds-2025.html#Intent;scheme=https;package=com.android.chrome;end;";
+        window.location.href = "intent:https://goldjewlleryhaul.blogspot.com
+          #Intent;scheme=https;package=com.android.chrome;end;";
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS: Show instruction
         document.getElementById("note").innerText = "iPhone users: Please tap the share button in Safari and choose 'Open in Browser'.";
