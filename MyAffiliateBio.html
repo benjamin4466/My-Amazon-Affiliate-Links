@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Open in Chrome</title>
+  <title>Open in Browser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -29,29 +29,35 @@
 </head>
 <body>
 
-  <h2>Open in Chrome</h2>
-  <p>After Opening in Browser Click Below 👇 To Continue.</p>
+  <h2>Open in Browser</h2>
+  <p>Click below to continue to your affiliate page.</p>
 
-  <button class="button" onclick="openInChrome()">Open in Chrome</button>
+  <button class="button" onclick="openLink()">Open Now</button>
 
   <div class="note" id="note"></div>
 
   <script>
-    function openInChrome() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-      if (/android/i.test(userAgent)) {
-        // Android: Try to open in Chrome
-        window.location.href = "intent:https://sites.google.com/view/allproductlink/home#Intent;scheme=https;package=com.android.chrome;end;";
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS: Show instruction
-        document.getElementById("note").innerText = "iPhone users: Please tap the share button in Safari and choose 'Open in Browser'.";
+      // Common in-app browser signatures
+      return /FBAN|FBAV|Instagram|Messenger|Line|Snapchat|TikTok|Pinterest/i.test(ua);
+    }
+
+    function openLink() {
+      const url = "https://sites.google.com/view/allproductlink/home";
+
+      if (isInAppBrowser()) {
+        document.getElementById("note").innerText =
+          "⚠️ Please open this page in your default browser (like Chrome or Safari). Tap the three dots (⋯) or share icon and choose 'Open in Browser'.";
       } else {
-        // Other devices
-        window.location.href = "https://sites.google.com/view/allproductlink/home";
+        // Safe to open in default browser
+        window.location.href = url;
       }
     }
   </script>
 
 </body>
 </html>
+
+      
