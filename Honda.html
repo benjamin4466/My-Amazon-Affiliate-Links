@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Honda.html</title>
+  <title>Honda Redirect</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     :root{--bg:#000;--card:#222;--accent:#ffd700;--muted:#999}
@@ -23,7 +22,6 @@
     img.logo{max-width:120px;border-radius:8px;margin-top:12px}
     .footer{font-size:12px;color:#bbb;margin-top:12px}
     .hidden{display:none !important}
-    /* small screens */
     @media (max-width:420px){.card{padding:18px} .arrow{font-size:48px}}
   </style>
 </head>
@@ -34,19 +32,15 @@
     <div class="card" id="card">
       <h1>⚠️ App WebView Detected</h1>
 
-   <p id="msg">
-        If You are TikTok Facebook User plzz click on three dots above on arrow hint and select open in browser to continue  </b> to continue to the store.
+      <p id="msg">
+        If you are using TikTok or Facebook, please tap on the three dots above (see arrow) and select <b>“Open in browser”</b> to continue to the store.
       </p>
 
-      <div class="hint" id="hint">If you are in Chrome or another browser the link will open automatically.</div>
+      <div class="hint" id="hint">If you are already in Chrome or another browser, the link will open automatically.</div>
 
       <div class="buttons">
-        <!-- The anchor tries to open the link (may still open in-app depending on the host app) -->
         <a id="openLink" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open in browser</a>
-
-        <!-- Optional: open via window.open which may prompt external chooser on some Android versions -->
         <button id="openExtern" class="btn btn-ghost">Try External Open</button>
-
         <button id="copyBtn" class="btn btn-ghost">Copy Link</button>
       </div>
 
@@ -55,8 +49,47 @@
       <img class="logo" src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in browser">
 
       <div class="footer">
-        Tip: in-app browsers usually have a menu (⋮ or …). Choose “Open in Browser” or “Open in Chrome”.
+        Tip: In-app browsers usually have a menu (⋮ or …). Choose “Open in Browser” or “Open in Chrome”.
       </div>
     </div>
-        </div>
-  
+  </div>
+
+  <script>
+    const realLink = "https://to.mysocial.io/s/jzyWkip-P"; // 🔗 Replace with your actual link
+
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isFacebook = /FBAN|FBAV|FB_IAB|FB4A|FBAN|FBBV/i.test(ua);
+    const isInstagram = /Instagram/i.test(ua);
+    const isTikTok = /Tiktok/i.test(ua);
+    const isMessenger = /Messenger/i.test(ua);
+    const isInApp = isFacebook || isInstagram || isTikTok || isMessenger;
+
+    // Elements
+    const openLink = document.getElementById("openLink");
+    const openExtern = document.getElementById("openExtern");
+    const copyBtn = document.getElementById("copyBtn");
+    const copySuccess = document.getElementById("copySuccess");
+
+    openLink.href = realLink;
+
+    // If not in in-app browser, auto redirect
+    if (!isInApp) {
+      window.location.href = realLink;
+    }
+
+    // Copy link button
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(realLink).then(() => {
+        copySuccess.style.display = "block";
+        setTimeout(() => (copySuccess.style.display = "none"), 2000);
+      });
+    });
+
+    // External open button
+    openExtern.addEventListener("click", () => {
+      window.open(realLink, "_blank");
+    });
+  </script>
+</body>
+                                  </html>
+
