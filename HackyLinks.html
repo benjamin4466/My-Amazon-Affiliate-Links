@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Open in Browser Hint</title>
+<style>
+  :root{
+    --bg:#000;
+    --text:#fff;
+    --accent:#ffd700; /* yellow */
+  }
+  html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+  body{background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;}
+  /* Overlay shown only when needed */
+  .hint-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:9999;display:flex;flex-direction:column;
+    align-items:center;justify-content:space-between;padding:28px;
+  }
+  .message{
+    margin-top:60px;text-align:center;max-width:680px;
+  }
+  .message h1{font-size:20px;margin:0 0 10px;color:var(--text);line-height:1.2}
+  .message p{margin:0;font-size:15px;color:#ddd}
+
+  /* Animated arrow in top-right */
+  .arrow-wrap{
+    position:fixed;top:14px;right:14px;width:192px;height:192px;pointer-events:none;z-index:10000;
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  }
+  .arrow{
+    width:150px;height:150px;display:block;
+    transform-origin:center;
+    animation:arrow-nudge 1.6s ease-in-out infinite;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+  }
+  @keyframes arrow-nudge{
+    0%{transform:translate(0,0) rotate(-30deg) scale(1)}
+    40%{transform:translate(-6px,-10px) rotate(-30deg) scale(1.05)}
+    70%{transform:translate(0,-6px) rotate(-30deg) scale(1.02)}
+    100%{transform:translate(0,0) rotate(-30deg) scale(1)}
+  }
+
+  /* text under arrow */
+  .arrow-text{
+    color:#fff;
+    font-size:14px;
+    margin-top:6px;
+    text-shadow:0 0 6px rgba(0,0,0,0.8);
+    font-weight:500;
+  }
+
+  /* three dots hint bubble (subtle) */
+  .dots-hint{
+    position:fixed;top:24px;right:24px;z-index:10001;font-size:12px;color:#111;
+    background:var(--accent);padding:6px 8px;border-radius:10px;font-weight:600;box-shadow:0 6px 14px rgba(0,0,0,0.4);
+  }
+
+  /* bottom CTA button */
+  .cta-wrap{width:100%;display:flex;flex-direction:column;align-items:center;padding-bottom:40px;text-align:center}
+  .cta-text{color:#fff;font-size:16px;margin-bottom:12px;}
+  .open-btn{
+    background:var(--accent);color:#111;border:none;padding:14px 22px;border-radius:999px;font-weight:700;
+    font-size:16px;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,0.5);
+  }
+  .open-btn:active{transform:translateY(1px)}
+  /* small close text */
+  .small-close{position:fixed;top:18px;left:18px;color:#bbb;font-size:13px;cursor:pointer;z-index:10002}
+  /* Responsive tweaks */
+  @media (max-width:420px){
+    .message h1{font-size:18px}
+    .dots-hint{font-size:11px;top:20px;right:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Main content -->
+<main aria-hidden="true" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+  <div style="text-align:center;color:#999">
+    <p style="font-size:16px">Welcome — content available below.</p>
+  </div>
+</main>
+
+<!-- Overlay -->
+<div id="hintOverlay" class="hint-overlay" style="display:none">
+  <div style="width:100%;display:flex;justify-content:space-between;align-items:center;">
+    <div class="small-close" id="closeBtn" title="Close hint">✕</div>
+    <div class="dots-hint">Three dots</div>
+  </div>
+
+  <div class="message" role="dialog" aria-labelledby="hintTitle" aria-describedby="hintDesc">
+    <h1 id="hintTitle">Open in browser to continue</h1>
+    <p id="hintDesc">If you opened this page from TikTok, please <strong>click the three dots</strong> in the top-right and choose <strong>"Open in browser"</strong> (or "Open in Chrome").</p>
+  </div>
+
+  <div class="cta-wrap">
+    <div class="cta-text">After opening in browser, click here 👇</div>
+    <button id="openBtn" class="open-btn" aria-label="Open in browser">Click to Continue</button>
+  </div>
+</div>
+
+<!-- Big Arrow with text -->
+<div class="arrow-wrap" aria-hidden="true">
+  <svg class="arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+    <path d="M5 19L19 5" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 5h10v10" stroke="#ffd700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="19" cy="5" r="3" fill="#ffd700" stroke="#111" stroke-width="1"/>
+  </svg>
+  <div class="arrow-text">Click on three dots above</div>
+</div>
+
+<script>
+const TARGET_URL = "https://to.mysocial.io/s/jzyWkip-P";
+
+function isTikTokBrowser() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera || "";
+  const s = ua.toLowerCase();
+  return s.includes("tiktok") || s.includes("musically") || s.includes("com.zhiliaoapp") || s.includes("tiktokembedded");
+}
+
+function openInExternalBrowser(url) {
+  const ua = navigator.userAgent || "";
+  const isAndroid = /android/i.test(ua);
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+
+  if (isAndroid) {
+    try {
+      const fallback = encodeURIComponent(url);
+      const intentUrl = url.replace(/^https?:\/\//, 'intent://') + '#Intent;package=com.android.chrome;scheme=https;S.browser_fallback_url=' + fallback + ';end';
+      window.location.href = intentUrl;
+      setTimeout(() => { window.location.href = url; }, 800);
+      return;
+    } catch (e) { window.location.href = url; return; }
+  }
+
+  if (isIOS) {
+    const withoutProtocol = url.replace(/^https?:\/\//, '');
+    const chromeScheme = 'googlechromes://' + withoutProtocol;
+    const start = Date.now();
+    window.location = chromeScheme;
+    setTimeout(function() {
+      if (Date.now() - start < 1200) { window.location = url; }
+    }, 900);
+    return;
+  }
+
+  try { window.open(url, '_blank', 'noopener'); } 
+  catch (e) { window.location.href = url; }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const overlay = document.getElementById('hintOverlay');
+  const openBtn = document.getElementById('openBtn');
+  const closeBtn = document.getElementById('closeBtn');
+
+  if (isTikTokBrowser()) { overlay.style.display = 'flex'; }
+  else { overlay.style.display = 'none'; }
+
+  openBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    openInExternalBrowser(TARGET_URL);
+  });
+
+  closeBtn.addEventListener('click', function(){
+    document.getElementById('hintOverlay').style.display = 'none';
+  });
+
+  document.addEventListener('keydown', function(ev){
+    if (ev.key === 'Escape') overlay.style.display = 'none';
+  });
+});
+</script>
+
+</body>
+</html>
