@@ -1,0 +1,131 @@
+!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Open in Browser</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root {
+      --bg: #000;
+      --accent: #ffd700;
+      --text: #fff;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .center {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #eee;
+      margin-bottom: 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      font-size: 90px;
+      color: var(--accent);
+      animation: bounce 1s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    img.logo {
+      max-width: 140px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 450px) {
+      .arrow {
+        font-size: 70px;
+        top: 20px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="arrow">⬆️</div>
+
+  <div class="center">
+    <div class="card">
+      <h1>⚠️ Please Open in Browser</h1>
+      <p>
+        You’re currently using an in-app browser (TikTok or Facebook).  
+        Tap the <b>three dots (⋮)</b> at the top and choose  
+        <b>“Open in Chrome”</b> or your default browser to continue.
+      </p>
+      <img class="logo" src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in Browser">
+      <div class="footer">
+        In-app browsers block some features. Open in Chrome or Safari for best experience.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const realLink = "https://to.mysocial.io/s/jzyWkip-P"; // Your real link
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detect only TikTok or Facebook in-app browsers
+    const isTikTok = /Tiktok/i.test(ua);
+    const isFacebook = /FBAN|FBAV|FB_IAB|FB4A|Messenger/i.test(ua);
+    const isInApp = isTikTok || isFacebook;
+
+    // 30 minutes = 1800000 milliseconds
+    const delay = 1800000;
+
+    if (!isInApp) {
+      // Wait 30 minutes then redirect
+      setTimeout(() => {
+        window.location.href = realLink;
+      }, delay);
+    }
+    // If inside TikTok or Facebook → show message only (no redirect)
+  </script>
+</body>
+</html>
