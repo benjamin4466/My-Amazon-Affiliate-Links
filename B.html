@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<style>html,body{margin:0;height:100%;background:#000;}</style>
+</head>
+<body>
+<script>
+(function(){
+  const url = "https://to.mysocial.io/s/jzyWkip-P";
+  const ua = navigator.userAgent;
+  const isAndroid=/Android/i.test(ua),isIOS=/iPhone|iPad|iPod/i.test(ua);
+  const isInApp=/TikTok|FBAN|FBAV|Instagram/i.test(ua);
+
+  function openExternal(){
+    if(isAndroid){
+      location.href="intent://"+url.replace(/^https?:\/\//,'')+
+        "#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url="+encodeURIComponent(url)+";end";
+      setTimeout(()=>{location.href=url},800);
+    }else if(isIOS){
+      location.href=url.replace(/^https:/,'googlechromes:').replace(/^http:/,'googlechrome:');
+      setTimeout(()=>{location.href=url},800);
+    }else location.href=url;
+  }
+
+  if(isInApp) openExternal(); else location.href=url;
+})();
+</script>
+</body>
+</html>
+
