@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Open in Chrome / iOS Browser</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto; padding:24px; direction:ltr; text-align:center;}
+    .card{max-width:560px;margin:24px auto;padding:20px;border:1px solid #eee;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.05);}
+    button{display:inline-block;padding:12px 18px;margin:8px;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
+    .btn-primary{background:#0a66ff;color:#fff;}
+    .btn-plain{background:#f2f2f2;color:#111;}
+    .warning{color:#b02a37;margin-top:10px;}
+    small{display:block;margin-top:8px;color:#666;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>BeautyToolsFind — Open Link</h2>
+    <p>This button will try to open the link in <b>Chrome</b> (Android) or a normal <b>iOS browser</b>.  
+    If you are inside an in-app browser (like TikTok, Instagram, or YouTube app), a message will appear  
+    telling you how to open it in an external browser.</p>
+
+    <!-- Replace or edit your target URL here -->
+    <script>
+      const TARGET_URL = "https://to.mysocial.io/s/jzyWkip-P";
+    </script>
+
+    <div id="controls">
+      <button id="openChrome" class="btn-primary">Android: Open in Chrome</button>
+      <button id="openNormal" class="btn-plain">Open (Default)</button>
+      <button id="iosAdvice" class="btn-plain">iOS: Open in Safari (Help)</button>
+    </div>
+
+    <p id="message" class="warning" style="display:none;"></p>
+    <small>If these buttons don’t work inside your app’s browser, please copy and paste the link directly into Chrome or Safari.</small>
+  </div>
+
+  <script>
+    // --- Basic detection for webview / in-app browsers ---
+    function isAndroid() {
+      return /android/i.test(navigator.userAgent);
+    }
+    function isIOS() {
+      return /iphone|ipad|ipod/i.test(navigator.userAgent);
+    }
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || "";
+      const lower = ua.toLowerCase();
+
+      // common webview markers
+      if (lower.includes("wv") || lower.includes("webview")) return true;
+
+      // known in-app tokens
+      const appTokens = ["fbav","facebook","fb_iab","instagram","line","pinterest","twitter","tiktok","weibo","micromessenger","youtube"];
+      for (const t of appTokens) if (lower.includes(t)) return true;
+
+      // iOS webview detection
+      if (isIOS() && !/safari/i.test(lower) && /applewebkit/i.test(lower)) return true;
+
+      return false;
+    }
+
+    function showMessage(msg) {
+      const el = document.getElementById("message");
+      el.style.display = "block";
+      el.textContent = msg;
+    }
+
+    // Android: try to open in Chrome using intent
+    document.getElementById("openChrome").addEventListener("click", function(){
+      if (!isAndroid()) {
+        showMessage("This button works only for Android devices. Please use 'Open (Default)' instead.");
+        return;
+      }
+
+      if (isInAppBrowser()) {
+        showMessage("You are using an in-app browser — please tap 'Open in Browser' or 'Open in Chrome' to open it externally.");
+      }
+
+      // Intent URL to specifically open in Chrome
+      const intentUrl = "intent://to.mysocial.io/s/jzyWkip-P#Intent;package=com.android.chrome;scheme=https;end";
+      window.location = intentUrl;
+
+      // fallback to normal open if intent fails
+      setTimeout(()=>{ window.open(TARGET_URL, "_blank"); }, 1200);
+    });
+
+    // Default open
+    document.getElementById("openNormal").addEventListener("click", function(){
+      if (isInAppBrowser()) {
+        showMessage("You are currently in an in-app browser. For the best experience, open this page directly in Chrome or Safari.");
+      }
+      window.open(TARGET_URL, "_blank");
+    });
+
+    // iOS advice/help button
+    document.getElementById("iosAdvice").addEventListener("click", function(){
+      if (!isIOS()) {
+        showMessage("This help message is for iOS users. Please use 'Open (Default)'.");
+        return;
+      }
+      if (isInAppBrowser()) {
+        showMessage("On iOS: Tap the Share button (bottom bar) → choose 'Open in Safari' or 'Open in Browser'. If you’re in the YouTube app, tap Share → 'Open in Safari'.");
+      } else {
+        window.open(TARGET_URL, "_blank");
+      }
+    });
+
+    // On page load
+    window.addEventListener("load", function(){
+      if (isInAppBrowser()) {
+        showMessage("This page is currently open in an in-app browser — for best results, open it directly in Chrome or Safari.");
+      }
+    });
+  </script>
+</body>
+</html>
