@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Order Ticket</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.box{
+  width:100%;
+  max-width:520px;
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+}
+h1{text-align:center;}
+input,select,textarea,button{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+}
+textarea{resize:none;}
+button{
+  background:#1e90ff;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+button:hover{background:#3aa0ff;}
+.hidden{display:none;}
+small{text-align:center;display:block;opacity:0.7;}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<form id="orderForm">
+<h1>🛒 Order Ticket</h1>
+
+<input type="hidden" name="order_id" id="order_id">
+
+<input type="text" name="product_name" placeholder="Product Name" required>
+<input type="text" name="product_color" placeholder="Color">
+
+<select name="size">
+<option value="">Size</option>
+<option>XS</option><option>S</option><option>M</option>
+<option>L</option><option>XL</option><option>XXL</option>
+</select>
+
+<input type="number" name="quantity" placeholder="Quantity" required>
+
+<select id="country" name="country" required onchange="autoCurrency()">
+<option value="">🌍 Select Country</option>
+
+<option value="PK">🇵🇰 Pakistan</option>
+<option value="IN">🇮🇳 India</option>
+<option value="BD">🇧🇩 Bangladesh</option>
+
+<option value="US">🇺🇸 United States</option>
+<option value="CA">🇨🇦 Canada</option>
+<option value="GB">🇬🇧 United Kingdom</option>
+<option value="FR">🇫🇷 France</option>
+<option value="DE">🇩🇪 Germany</option>
+<option value="NL">🇳🇱 Netherlands</option>
+<option value="BE">🇧🇪 Belgium</option>
+<option value="CH">🇨🇭 Switzerland</option>
+<option value="IT">🇮🇹 Italy</option>
+<option value="ES">🇪🇸 Spain</option>
+
+<option value="SA">🇸🇦 Saudi Arabia</option>
+<option value="AE">🇦🇪 UAE</option>
+<option value="QA">🇶🇦 Qatar</option>
+<option value="KW">🇰🇼 Kuwait</option>
+
+<option value="CN">🇨🇳 China</option>
+<option value="JP">🇯🇵 Japan</option>
+<option value="KR">🇰🇷 South Korea</option>
+<option value="SG">🇸🇬 Singapore</option>
+<option value="MY">🇲🇾 Malaysia</option>
+<option value="TH">🇹🇭 Thailand</option>
+<option value="ID">🇮🇩 Indonesia</option>
+<option value="PH">🇵🇭 Philippines</option>
+
+<option value="AU">🇦🇺 Australia</option>
+<option value="NZ">🇳🇿 New Zealand</option>
+
+<option value="ZA">🇿🇦 South Africa</option>
+<option value="NG">🇳🇬 Nigeria</option>
+<option value="EG">🇪🇬 Egypt</option>
+
+<option value="BR">🇧🇷 Brazil</option>
+<option value="AR">🇦🇷 Argentina</option>
+
+<option value="OTHER">🌐 Other</option>
+</select>
+
+<select id="currency" name="currency" required>
+<option value="">💱 Currency</option>
+<option>PKR</option>
+<option>INR</option>
+<option>USD</option>
+<option>EUR</option>
+<option>GBP</option>
+<option>AED</option>
+<option>SAR</option>
+<option>SGD</option>
+<option>JPY</option>
+<option>CNY</option>
+</select>
+
+<input type="text" name="district" placeholder="City / District">
+<input type="text" name="street" placeholder="Street / House No">
+
+<select name="payment_method">
+<option value="">Payment Preference</option>
+<option>Cash on Delivery</option>
+<option>Bank Transfer</option>
+<option>Card (Visa / Master)</option>
+<option>PayPal</option>
+<option>EasyPaisa / JazzCash</option>
+</select>
+
+<textarea name="message" placeholder="Order notes / size chart"></textarea>
+
+<button type="submit">Submit Order</button>
+<small>No payment collected online</small>
+</form>
+
+<div id="done" class="hidden">
+<h1>✅ Order Received</h1>
+<p>Your Order ID:</p>
+<h2 id="oid"></h2>
+<p>Save this ID for tracking</p>
+</div>
+
+</div>
+
+<script>
+const currencyMap={
+PK:"PKR",IN:"INR",BD:"BDT",
+US:"USD",CA:"CAD",GB:"GBP",
+FR:"EUR",DE:"EUR",NL:"EUR",
+BE:"EUR",CH:"CHF",IT:"EUR",ES:"EUR",
+SA:"SAR",AE:"AED",QA:"QAR",KW:"KWD",
+CN:"CNY",JP:"JPY",KR:"KRW",
+SG:"SGD",MY:"MYR",TH:"THB",
+ID:"IDR",PH:"PHP",
+AU:"AUD",NZ:"NZD",
+ZA:"ZAR",NG:"NGN",EG:"EGP",
+BR:"BRL",AR:"ARS"
+};
+
+function autoCurrency(){
+const c=document.getElementById("country").value;
+const cur=document.getElementById("currency");
+if(currencyMap[c]) cur.value=currencyMap[c];
+}
+
+const orderId="ORD-"+Date.now();
+document.getElementById("order_id").value=orderId;
+
+document.getElementById("orderForm").addEventListener("submit",e=>{
+e.preventDefault();
+fetch("https://formspree.io/f/mnjaayra",{
+method:"POST",
+body:new FormData(e.target),
+headers:{Accept:"application/json"}
+}).then(r=>{
+if(r.ok){
+e.target.classList.add("hidden");
+document.getElementById("done").classList.remove("hidden");
+document.getElementById("oid").innerText=orderId;
+}else alert("Error, try again");
+});
+});
+</script>
+
+</body>
+</html>
