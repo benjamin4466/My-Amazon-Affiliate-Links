@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Support Chat</title>
-  <style>
-    body {
-      background-color: #000; /* Black background */
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      margin: 0;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Ticket</title>
+<style>
+body {
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    flex-direction:column;
+    text-align:center;
+}
+h1 {
+    margin-bottom:20px;
+}
+form {
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    max-width:400px;
+}
+input, textarea, button {
+    margin:5px 0;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+}
+textarea { resize:none; min-height:100px; }
+button {
+    background:#1E90FF;
+    color:#fff;
+    cursor:pointer;
+}
+button:hover { background:#3ea0ff; }
+</style>
 </head>
 <body>
-  <h1>Welcome to Hacky Finds</h1>
-  <p>Connecting you to live support...</p>
 
-  <!-- Tawk.to Widget Script -->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/694353f14dd091198018f54a/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-  })();
+<h1>Submit Your Ticket</h1>
+<p>Your message will be sent anonymously. No email or number needed.</p>
 
-  // Auto open chat on page load
-  Tawk_API.onLoad = function(){
-      Tawk_API.maximize(); // Chat box auto open
-  };
-  </script>
+<form action="https://formspree.io/f/mnjaayra" method="POST">
+    <input type="text" name="name" placeholder="Your Name (optional)">
+    <textarea name="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send Ticket</button>
+</form>
+
 </body>
 </html>
 
