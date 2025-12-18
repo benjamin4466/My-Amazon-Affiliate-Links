@@ -1,47 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacky Finds</title>
+    <title>Live Support Chat</title>
     <style>
         body {
-            background-color: black;
-            color: white;
+            background-color: #000; /* Black background */
+            color: #fff;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            padding-top: 50px; /* Page ke upar thoda space */
             text-align: center;
         }
         h1 {
-            font-size: 48px;
-            margin: 0;
+            font-size: 3em;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 24px;
-            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        a.button {
+            background-color: #1abc9c;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        a.button:hover {
+            background-color: #16a085;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome To Hacky Finds</h1>
-    <p>Come In Live Chat With Us</p>
-</body><!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/694353f14dd091198018f54a/1jco3psrg';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <h1>Welcome to Hacky Finds</h1>
+    <p>Click below to start live chat with us:</p>
+    <a class="button" href="https://embed.tawk.to/694353f14dd091198018f54a/default" target="_blank">Start Live Chat</a>
+</body>
 </html>
-
