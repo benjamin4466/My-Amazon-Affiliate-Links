@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Ticket</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+form{
+  background:#111;
+  padding:20px;
+  border-radius:8px;
+  width:100%;
+  max-width:450px;
+}
+h1{text-align:center; margin-bottom:10px;}
+input, select, textarea, button{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  font-size:15px;
+}
+textarea{min-height:80px; resize:none;}
+button{
+  background:#1E90FF;
+  color:#fff;
+  cursor:pointer;
+}
+button:hover{background:#3ea0ff;}
+small{opacity:0.7; display:block; text-align:center;}
+</style>
+</head>
+
+<body>
+
+<form action="https://formspree.io/f/mnjaayra" method="POST">
+  <h1>Order Ticket</h1>
+
+  <!-- PRODUCT DETAILS -->
+  <input type="text" name="product_name" placeholder="Product Name" required>
+
+  <input type="text" name="product_color" placeholder="Product Color">
+
+  <select name="product_size">
+    <option value="">Select Size</option>
+    <option>XS</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>XXL</option>
+  </select>
+
+  <input type="number" name="quantity" placeholder="Quantity" required>
+
+  <!-- ADDRESS DETAILS -->
+  <input type="text" name="country" placeholder="Country" required>
+
+  <input type="text" name="district" placeholder="District">
+
+  <input type="text" name="village" placeholder="Village">
+
+  <input type="text" name="village_code" placeholder="Village / Postal Code">
+
+  <input type="text" name="street_number" placeholder="Street / House Number">
+
+  <!-- CONTACT -->
+  <input type="text" name="contact" placeholder="WhatsApp or Email (optional)">
+
+  <!-- NOTES -->
+  <textarea name="message" placeholder="Order notes / size chart details / instructions"></textarea>
+
+  <button type="submit">Submit Order</button>
+
+  <small>No payment required. Order will be processed manually.</small>
+</form>
+
+</body>
+</html>
