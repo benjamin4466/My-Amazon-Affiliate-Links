@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Place Order</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+form{
+  background:#111;
+  padding:20px;
+  border-radius:8px;
+  width:100%;
+  max-width:400px;
+}
+h1{text-align:center;}
+input, textarea, button{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  font-size:15px;
+}
+textarea{min-height:80px; resize:none;}
+button{
+  background:#1E90FF;
+  color:#fff;
+  cursor:pointer;
+}
+button:hover{background:#3ea0ff;}
+small{opacity:0.7;}
+</style>
+</head>
+
+<body>
+
+<form action="https://formspree.io/f/mnjaayra" method="POST">
+  <h1>Order Ticket</h1>
+
+  <input type="text" name="product" placeholder="Product Name" required>
+
+  <input type="number" name="quantity" placeholder="Quantity" required>
+
+  <input type="text" name="city" placeholder="City / Area">
+
+  <input type="text" name="contact" placeholder="WhatsApp or Email (optional)">
+
+  <textarea name="message" placeholder="Order instructions / notes"></textarea>
+
+  <button type="submit">Submit Order</button>
+
+  <small>No payment required. We will contact you after review.</small>
+</form>
+
+</body>
+</html>
