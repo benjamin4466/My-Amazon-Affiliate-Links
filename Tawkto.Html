@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Support Chat</title>
-    <style>
-        body {
-            background-color: #000; /* Black background */
-            color: #fff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        a.button {
-            background-color: #1abc9c;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        a.button:hover {
-            background-color: #16a085;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Support Chat</title>
+  <style>
+    body {
+      background-color: #000; /* Black background */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to Hacky Finds</h1>
-    <p>Click below to start live chat with us:</p>
-    <a class="button" href="https://embed.tawk.to/694353f14dd091198018f54a/default" target="_blank">Start Live Chat</a>
+  <h1>Welcome to Hacky Finds</h1>
+  <p>Connecting you to live support...</p>
+
+  <!-- Tawk.to Widget Script -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/694353f14dd091198018f54a/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+  })();
+
+  // Auto open chat on page load
+  Tawk_API.onLoad = function(){
+      Tawk_API.maximize(); // Chat box auto open
+  };
+  </script>
 </body>
 </html>
+
