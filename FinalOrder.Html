@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Ticket</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.container{
+  background:#111;
+  padding:20px;
+  border-radius:8px;
+  width:100%;
+  max-width:500px;
+}
+h1{text-align:center;}
+input, select, textarea, button{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  font-size:15px;
+}
+textarea{min-height:80px; resize:none;}
+button{
+  background:#1E90FF;
+  color:#fff;
+  cursor:pointer;
+}
+button:hover{background:#3ea0ff;}
+.hidden{display:none;}
+small{opacity:0.7; display:block; text-align:center;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<form id="orderForm">
+  <h1>Order Ticket</h1>
+
+  <input type="hidden" name="order_id" id="order_id">
+
+  <input type="text" name="product_name" placeholder="Product Name" required>
+  <input type="text" name="product_color" placeholder="Product Color">
+
+  <select name="product_size">
+    <option value="">Select Size</option>
+    <option>XS</option><option>S</option><option>M</option>
+    <option>L</option><option>XL</option><option>XXL</option>
+  </select>
+
+  <input type="number" name="quantity" placeholder="Quantity" required>
+
+  <select name="country" required>
+    <option value="">Select Country</option>
+    <option>Pakistan</option><option>India</option><option>United States</option>
+    <option>United Kingdom</option><option>Canada</option><option>Australia</option>
+    <option>Saudi Arabia</option><option>UAE</option><option>Germany</option>
+    <option>France</option>
+  </select>
+
+  <input type="text" name="district" placeholder="District / City">
+  <input type="text" name="village" placeholder="Village / Area">
+  <input type="text" name="village_code" placeholder="Postal / Village Code">
+  <input type="text" name="street_number" placeholder="Street / House Number">
+
+  <select name="payment_method" required>
+    <option value="">Preferred Payment Method</option>
+    <option>Cash on Delivery (COD)</option>
+    <option>Bank Transfer</option>
+    <option>Credit / Debit Card</option>
+    <option>Visa</option>
+    <option>MasterCard</option>
+    <option>PayPal</option>
+    <option>JazzCash</option>
+    <option>EasyPaisa</option>
+  </select>
+
+  <select name="currency" required>
+    <option value="">Preferred Currency</option>
+    <option>PKR</option><option>USD</option><option>EUR</option>
+    <option>GBP</option><option>AED</option><option>SAR</option>
+  </select>
+
+  <input type="text" name="contact" placeholder="WhatsApp or Email (optional)">
+
+  <textarea name="message" placeholder="Order notes / size chart details"></textarea>
+
+  <button type="submit">Submit Order</button>
+  <small>No payment is collected online.</small>
+</form>
+
+<div id="thankYou" class="hidden">
+  <h1>✅ Order Submitted</h1>
+  <p>Your Order ID:</p>
+  <h2 id="showOrderId"></h2>
+  <p>Please save this Order ID for reference.</p>
+</div>
+
+</div>
+
+<script>
+const form = document.getElementById("orderForm");
+const thankYou = document.getElementById("thankYou");
+const showOrderId = document.getElementById("showOrderId");
+
+const orderId = "ORD-" + Date.now();
+document.getElementById("order_id").value = orderId;
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch("https://formspree.io/f/mnjaayra", {
+    method: "POST",
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      form.classList.add("hidden");
+      thankYou.classList.remove("hidden");
+      showOrderId.textContent = orderId;
+    }else{
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
+</script>
+
+</body>
+</html
