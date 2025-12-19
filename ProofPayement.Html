@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment Proof Submission</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.box{background:#111;width:100%;max-width:520px;padding:20px;border-radius:12px}
+h1,h3{text-align:center}
+input,select,textarea,button{width:100%;padding:10px;margin:6px 0;border:none;border-radius:6px;font-size:14px}
+textarea{resize:none;min-height:80px}
+button{background:#28a745;color:#fff;font-size:16px;cursor:pointer}
+button:hover{background:#3ecf5c}
+small{display:block;text-align:center;opacity:.7}
+.hidden{display:none}
+hr{opacity:.2}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<form id="paymentForm" enctype="multipart/form-data">
+<h1>💳 Payment Proof</h1>
+<p style="text-align:center;opacity:.85">Upload your payment receipt after order confirmation.</p>
+
+<input type="hidden" name="payment_ticket_id" id="payment_ticket_id">
+
+<h3>🧾 Order Information</h3>
+<input type="text" name="order_id" placeholder="Order ID (provided by us)" required>
+<input type="text" name="customer_name" placeholder="Your Name" required>
+
+<hr>
+
+<h3>🏦 Payment Details</h3>
+<select name="payment_method" required>
+<option value="">Payment Method Used</option>
+<option>Bank Transfer</option>
+<option>EasyPaisa</option>
+<option>JazzCash</option>
+<option>PayPal</option>
+<option>Wise</option>
+<option>Western Union</option>
+<option>Other</option>
+</select>
+
+<input type="text" name="bank_name" placeholder="Bank / Wallet Name" required>
+<input type="text" name="transaction_id" placeholder="Transaction / Reference Number" required>
+<input type="text" name="amount_paid" placeholder="Amount Paid">
+<input type="text" name="currency" placeholder="Currency (PKR / USD / EUR etc)">
+
+<hr>
+
+<h3>📎 Upload Payment Receipt</h3>
+<input type="file" name="payment_proof" accept="image/*,.pdf" required>
+
+<hr>
+
+<h3>📩 Preferred Reply Method</h3>
+<select name="reply_method" required>
+<option value="">How should we reply?</option>
+<option>WhatsApp</option>
+<option>Email</option>
+<option>Instagram ID</option>
+<option>TikTok ID</option>
+<option>Facebook Profile</option>
+</select>
+
+<input type="text" name="contact_detail" placeholder="WhatsApp number / Email / Social ID" required>
+
+<textarea name="notes" placeholder="Any additional payment notes"></textarea>
+
+<button type="submit">Submit Payment Proof</button>
+<small>Payment proof will be reviewed manually</small>
+</form>
+
+<div id="done" class="hidden">
+<h1>✅ Payment Proof Submitted</h1>
+<p><strong>Thank you. Your payment proof has been received.</strong
