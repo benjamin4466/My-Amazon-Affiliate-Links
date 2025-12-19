@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Ticket</title>
+
+<style>
+body{
+    background:#000;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    padding:40px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    max-width:420px;
+    margin:auto;
+}
+input, select, textarea, button{
+    margin:6px 0;
+    padding:10px;
+    border-radius:5px;
+    border:none;
+    font-size:15px;
+}
+textarea{resize:none;min-height:100px;}
+button{
+    background:#1E90FF;
+    color:#fff;
+    cursor:pointer;
+}
+button:hover{background:#3ea0ff;}
+small{opacity:0.7;}
+</style>
+</head>
+
+<body>
+
+<h1>Submit Your Ticket</h1>
+<p>
+Contact us using your preferred social media ID.  
+No phone number or email is required.
+</p>
+
+<form action="https://formspree.io/f/mnjaayra" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name (optional)">
+
+    <select name="contact_method" required>
+        <option value="">Select Contact Method</option>
+        <option>Instagram ID</option>
+        <option>TikTok ID</option>
+        <option>Facebook Profile</option>
+        <option>Pinterest ID</option>
+        <option>Twitter / X</option>
+        <option>Other Social Media</option>
+    </select>
+
+    <input type="text" name="social_id" placeholder="Enter your social media username / profile link" required>
+
+    <textarea name="message" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Ticket</button>
+
+    <small>
+        We will reply to you via your selected social media platform.
+    </small>
+
+</form>
+
+</body>
+</html>
