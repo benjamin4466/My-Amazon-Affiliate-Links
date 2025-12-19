@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Order Request</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.box{background:#111;width:100%;max-width:560px;padding:20px;border-radius:12px}
+h1,h3{text-align:center}
+input,select,textarea,button{width:100%;padding:10px;margin:6px 0;border:none;border-radius:6px;font-size:14px}
+textarea{resize:none;min-height:80px}
+button{background:#1e90ff;color:#fff;font-size:16px;cursor:pointer}
+button:hover{background:#3aa0ff}
+small{display:block;text-align:center;opacity:.7}
+.hidden{display:none}
+hr{opacity:.2}
+</style>
+</head>
+<body>
+<div class="box">
+
+<form id="orderForm">
+<h1>🛒 Order Request</h1>
+<p style="text-align:center;opacity:.85">We will review your order request and come back to you soon.</p>
+
+<input type="hidden" name="order_id" id="order_id">
+
+<h3>🌐 Preferred Language</h3>
+<select name="preferred_language" required>
+<option value="">Select Language</option>
+<option>English</option>
+<option>Urdu</option>
+<option>Hindi</option>
+<option>French</option>
+<option>German</option>
+<option>Spanish</option>
+</select>
+
+<hr>
+
+<input type="text" name="product_name" placeholder="Product Name" required>
+<input type="text" name="product_color" placeholder="Product Color">
+
+<select name="product_size">
+<option value="">Size</option>
+<option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+</select>
+
+<input type="number" name="quantity" placeholder="Quantity" required>
+
+<hr>
+
+<h3>📍 Delivery Location</h3>
+<select id="country" name="country" onchange="autoCurrency()" required>
+<option value="">Select Country</option>
+<option value="PK">🇵🇰 Pakistan</option>
+<option value="IN">🇮🇳 India</option>
+<option value="BD">🇧🇩 Bangladesh</option>
+<option value="US">🇺🇸 United States</option>
+<option value="GB">🇬🇧 United Kingdom</option>
+<option value="FR">🇫🇷 France</option>
+<option value="DE">🇩🇪 Germany</option>
+<option value="NL">🇳🇱 Netherlands</option>
+<option value="SG">🇸🇬 Singapore</option>
+<option value="AE">🇦🇪 UAE</option>
+<option value="SA">🇸🇦 Saudi Arabia</option>
+<option value="AU">🇦🇺 Australia</option>
+<option value="CA">🇨🇦 Canada</option>
+<option value="OTHER">Other</option>
+</select>
+
+<input type="text" name="district" placeholder="City / District">
+<input type="text" name="village" placeholder="Village / Area">
+<input type="text" name="village_code" placeholder="Postal / Village Code">
+<input type="text" name="street_number" placeholder="Street / House Number">
+
+<select id="currency" name="currency" required>
+<option value="">Preferred Currency</option>
+<option>PKR</option><option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>SGD</option><option>JPY</option><option>AUD</option>
+</select>
+
+<hr>
+
+<h3>💳 Payment Preference</h3>
+<select name="payment_method" required>
+<option value="">Select Payment Method</option>
+<option>Cash on Delivery</option>
+<option>Bank Transfer</option>
+<option>Credit / Debit Card</option>
+<option>PayPal</option>
+<option>EasyPaisa / JazzCash</option>
+</select>
+
+<hr>
+
+<h3>📩 How should we reply you?</h3>
+<p style="font-size:13px;opacity:.8">Choose one method and provide your contact detail. We will contact you only via this method.</p>
+
+<select name="reply_method" required>
+<option value="">Select Reply Method</option>
+<option>WhatsApp</option>
+<option>Email</option>
+<option>Instagram ID</option>
+<option>TikTok ID</option>
+<option>Facebook Profile</option>
+<option>Pinterest ID</option>
+</select>
+
+<input type="text" name="contact_detail" placeholder="Enter WhatsApp number / Email / Social media ID" required>
+
+<textarea name="message" placeholder="Order notes / size chart / extra details"></textarea>
+
+<button type="submit">Submit Order Request</button>
+<small>No payment is collected online</small>
+</form>
+
+<div id="done" class="hidden">
+<h1>✅ Request Submitted</h1>
+<p><strong>We will review your order request and come back to you soon.</strong></p>
+<p>Your Order ID:</p>
+<h2 id="oid"></h2>
+<hr>
+<h3>What happens next?</h3>
+<ul style="font-size:14px;line-height:1.6;opacity:.85">
+<li>We review your order details</li>
+<li>Check availability & pricing</li>
+<li>Reply via your selected contact method</li>
+<li>Reply will be in your selected language</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+const currencyMap={PK:"PKR",IN:"INR",BD:"BDT",US:"USD",GB:"GBP",FR:"EUR",DE:"EUR",NL:"EUR",SG:"SGD",AE:"AED",SA:"SAR",AU:"AUD",CA:"CAD"};
+function autoCurrency(){const c=document.getElementById("country").value;const cur=document.getElementById("currency");if(currencyMap[c])cur.value=currencyMap[c];}
+const orderId="ORD-"+Date.now();document.getElementById("order_id").value=orderId;
+document.getElementById("orderForm").addEventListener("submit",function(e){e.preventDefault();fetch("https://formspree.io/f/mnjaayra",{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}}).then(r=>{if(r.ok){this.classList.add("hidden");document.getElementById("done").classList.remove("hidden");document.getElementById("oid").innerText=orderId;}else alert("Error submitting form");});});
+</script>
+
+</body>
+</html>
