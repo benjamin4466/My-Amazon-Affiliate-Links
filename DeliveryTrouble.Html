@@ -63,3 +63,30 @@ Our team will check and update you.
 <option>Email</option>
 <option>Both</option>
 </select>
+<hr>
+
+<button type="submit">Submit Delivery Request</button>
+<small>Please ensure your contact details are correct</small>
+</form>
+
+<div id="done" class="hidden">
+<h1>✅ Request Received</h1>
+<p><strong>Your delivery inquiry has been submitted.</strong></p>
+<p>Delivery Ticket ID:</p>
+<h2 id="did"></h2>
+<hr>
+<ul style="font-size:14px;line-height:1.6;opacity:.85">
+<li>We will investigate your delivery status</li>
+<li>Courier & tracking will be checked</li>
+<li>You will be contacted via WhatsApp or Email</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+const did="DEL-"+Date.now();
+document.getElementById("delivery_ticket_id").value=did;
+
+document.getElementById("deliveryForm").addEventListener("submit",function(e){
+  e
