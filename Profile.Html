@@ -1,0 +1,81 @@
+
+<!-- HackyFinds Premium Header With Glow Animation -->
+<style>
+.hacky-header {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Image Glow */
+.hacky-header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    animation: glowPulse 3s infinite alternate;
+}
+
+/* Title Glow + Animation */
+.hacky-title {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+    animation: textGlow 2.5s infinite alternate;
+}
+
+/* Tagline */
+.hacky-tagline {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #dcdcdc;
+    letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff;
+    }
+    to {
+        text-shadow: 0 0 15px #00e5ff,
+                     0 0 30px #00e5ff;
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(0,229,255,0.9);
+    }
+}
+
+@media (max-width: 600px) {
+    .hacky-title {
+        font-size: 34px;
+    }
+    .hacky-tagline {
+        font-size: 15px;
+    }
+}
+</style>
+
+<div class="hacky-header">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSmDdrAMhOzbxgL5vkZxGQeNL13M5tBTVr3S57VLKPE9Y804If2WKDYdLAcVPkAyZuYOZ57GGQhLmZMhoJaCVa_VCYM_b1Sl-Y4S-Vk6dy3qLbnAM7isU25alLabeIZzv7xrCfV2GTLoptmTiYMNpzDO2Rj3pW8G7B2IaUehuBZce_LWmu0Da3qReiVvQ/w320-h320/IMG_20251027_180046_908.webp" alt="HackyFinds Logo">
+
+    <h1 class="hacky-title">HackyFinds</h1>
+    <p class="hacky-tagline">
+        We Provide Products at Wholesale Rates – Trusted • Affordable • Professional
+    </p>
+</div>
+<!-- End -->
