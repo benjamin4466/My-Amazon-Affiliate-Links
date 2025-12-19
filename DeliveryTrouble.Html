@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delivery Status Inquiry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.box{background:#111;width:100%;max-width:520px;padding:20px;border-radius:12px}
+h1,h3{text-align:center}
+input,select,textarea,button{width:100%;padding:10px;margin:6px 0;border:none;border-radius:6px;font-size:14px}
+textarea{resize:none;min-height:90px}
+button{background:#ff9800;color:#000;font-size:16px;cursor:pointer}
+button:hover{background:#ffb347}
+small{display:block;text-align:center;opacity:.75}
+.hidden{display:none}
+hr{opacity:.2}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<form id="deliveryForm">
+<h1>🚚 Delivery Status Request</h1>
+<p style="text-align:center;opacity:.85">
+If your order has not been delivered yet, please submit this form.  
+Our team will check and update you.
+</p>
+
+<input type="hidden" name="delivery_ticket_id" id="delivery_ticket_id">
+
+<h3>🧾 Order Details</h3>
+<input type="text" name="order_id" placeholder="Order ID" required>
+<input type="text" name="customer_name" placeholder="Your Name" required>
+<input type="text" name="product_name" placeholder="Product Name (optional)">
+
+<hr>
+
+<h3>📦 Delivery Issue</h3>
+<select name="delivery_problem" required>
+<option value="">Select Issue</option>
+<option>Order not delivered yet</option>
+<option>Delayed delivery</option>
+<option>Wrong item received</option>
+<option>Incomplete delivery</option>
+<option>Other</option>
+</select>
+
+<textarea name="delivery_message" placeholder="Explain your delivery issue in detail" required></textarea>
+
+<hr>
+
+<h3>📞 Contact Details (Required)</h3>
+<p style="font-size:13px;opacity:.8">We will contact you regarding delivery update.</p>
+
+<input type="text" name="whatsapp_number" placeholder="WhatsApp Number" required>
+<input type="email" name="email_address" placeholder="Email Address" required>
+
+<select name="preferred_contact" required>
+<option value="">Preferred Contact Method</option>
+<option>WhatsApp</option>
+<option>Email</option>
+<option>Both</option>
+</select>
