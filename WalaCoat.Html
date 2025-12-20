@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Light Warm Winter Bubble Puff Jacket For Mens | HackyFinds</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  text-align:center;
+}
+
+/* Verified Ribbon */
+.ribbon{
+  position:fixed;
+  top:15px;
+  left:-45px;
+  background:#00c853;
+  color:#000;
+  padding:10px 60px;
+  font-weight:800;
+  transform:rotate(-45deg);
+  z-index:999;
+}
+
+/* Title */
+h1{font-size:24px;font-weight:700;}
+.title-line{width:360px;height:2px;background:#555;margin:10px auto;}
+
+.price{
+  font-size:20px;
+  font-weight:800;
+  color:#00ff99;
+  line-height:1.6;
+}
+
+.currency{
+  font-size:18px;
+  color:#ffcc00;
+  font-weight:700;
+  margin-top:6px;
+}
+
+.product-id{
+  font-size:14px;
+  color:#aaa;
+  margin-bottom:20px;
+}
+
+.image-card{
+  display:inline-block;
+  background:#111;
+  border:1px solid #222;
+  border-radius:8px;
+  margin:8px;
+  padding:6px;
+}
+.image-card img{width:210px;border-radius:6px;}
+
+.description{
+  max-width:780px;
+  margin:22px auto;
+  font-size:17px;
+  line-height:1.7;
+  color:#ddd;
+}
+
+.note-box{
+  max-width:780px;
+  margin:25px auto;
+  padding:14px;
+  border:1px solid #444;
+  background:#111;
+  border-radius:8px;
+}
+.note-title{font-size:18px;font-weight:800;color:#ffcc00;}
+.note-text{font-size:16px;font-weight:600;color:#ddd;}
+</style>
+</head>
+
+<body>
+
+<div class="ribbon">✔ VERIFIED SELLER</div>
+
+<h1>Light Warm Jacket Winter Bubble Puff Filled Down Puffer Cotton Jacket Coat For Mens</h1>
+<div class="title-line"></div>
+
+<div class="price">
+Mini Order = 2 Unit / Set<br>
+2 Unit = $14.7
+</div>
+
+<div class="currency" id="localPrice">Loading local price...</div>
+
+<div class="product-id">Product ID: 27732</div>
+
+<!-- Images -->
+<div class="image-card"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk5Gy4hpNOZHUCjz1PbIy2tg1oFQP1CE7j5Hmx05wF5NfC6-sM8xD1tTO7SP_8m8P3r4KhTMZEGlJVHH_s1SBp27gNFM756mTGmVburA7JzjnIZFRJ-vn1nKEZzPvWsq3_9euyZCvlOLIPJSW2UtqisVkg4q5wRZKWQFdLh0XjbVp-xknVmGg-o9x1m-U/s320/1766202198777.png"></div>
+
+<div class="image-card"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGnKvhf0ySsjfHatmrbJxd52EAGLQE3qrfS_3YY9rTMght6oXfH7rwrXwWdZWBcwwGQyAbZ8f9KSym9olCs-7J0IDcqCXSC0mRiKV2bsDCmpaATniB5iH5EjLTQQGVxra-1heSzK4p09UUr9wiZlc7E1dfNA008ANEPmYZrjBcL_hhcwxEVmIVN5SptKc/s320/1766202179969.png"></div>
+
+<!-- Description -->
+<div class="description">
+Stay comfortable and protected in cold weather with this light warm winter bubble jacket for men. Designed with puff filled down insulation, it provides excellent warmth without feeling heavy. The soft cotton outer fabric ensures durability and a smooth feel, making it ideal for daily wear, travel, and outdoor use.
+</div>
+
+<!-- Note -->
+<div class="note-box">
+  <div class="note-title">Note:</div>
+  <div class="note-text">
+    Shipping or delivery charges may vary for all countries.
+  </div>
+</div>
+
+<!-- AUTO COUNTRY CURRENCY SCRIPT -->
+<script>
+const usdPrice = 14.7;
+
+fetch("https://api.exchangerate.host/latest?base=USD")
+.then(res => res.json())
+.then(data => {
+  const userLang = navigator.language || "en-US";
+  const country = userLang.split("-")[1] || "US";
+
+  const currencyMap = {
+    US:"USD", PK:"PKR", IN:"INR", AE:"AED", SA:"SAR",
+    GB:"GBP", CA:"CAD", AU:"AUD", EU:"EUR"
+  };
+
+  const currency = currencyMap[country] || "USD";
+  const rate = data.rates[currency];
+
+  if(rate){
+    const localPrice = (usdPrice * rate).toFixed(2);
+    document.getElementById("localPrice").innerHTML =
+      `Approx Price in Your Currency: ${currency} ${localPrice}`;
+  }else{
+    document.getElementById("localPrice").innerHTML =
+      "Local currency conversion unavailable";
+  }
+});
+</script>
+
+</body>
+</html>
