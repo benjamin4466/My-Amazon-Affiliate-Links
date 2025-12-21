@@ -1,6 +1,4 @@
 
-Html
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,14 +9,39 @@ Html
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#ffffff;
-    color:#000;
+    background:#000;
+    color:#fff;
 }
 
 .container{
     max-width:1000px;
     margin:auto;
     padding:10px;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #FFD700; }
+  50% { box-shadow: 0 0 20px #FFD700; }
+  100% { box-shadow: 0 0 5px #FFD700; }
+}
+
+/* Title */
+.product-title{
+    text-align:center;
+    margin:20px 10px;
+    padding:15px;
+    border-radius:10px;
+    animation:glow 2s infinite;
+}
+.product-title h2{
+    margin:0;
+    color:#FFD700;
+}
+.product-title p{
+    margin:5px 0 0;
+    font-size:14px;
+    color:#fff;
 }
 
 /* Images */
@@ -30,13 +53,18 @@ body{
     width:320px;
     max-width:90%;
     margin:10px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    border-radius:12px;
+    animation:glow 2s infinite;
 }
 
-/* Title */
-h2{
-    margin:20px 10px;
+/* Price */
+.price-box{
+    padding:20px;
+    font-size:18px;
+    background:#0D1B3D;
+    border-radius:10px;
+    margin:15px;
+    animation:glow 2s infinite;
 }
 
 /* Description */
@@ -44,15 +72,6 @@ h2{
     padding:10px 20px;
     font-size:16px;
     line-height:1.7;
-}
-
-/* Price */
-.price-box{
-    padding:20px;
-    font-size:18px;
-    background:#f5f5f5;
-    border-radius:8px;
-    margin:15px;
 }
 
 /* Bullet Points */
@@ -71,12 +90,13 @@ ul{
 }
 .size-ticket th,
 .size-ticket td{
-    border:1px solid #ddd;
+    border:1px solid #FFD700;
     padding:10px;
     text-align:center;
 }
 .size-ticket th{
-    background:#f2f2f2;
+    background:#0D1B3D;
+    color:#FFD700;
 }
 
 /* Buttons */
@@ -91,8 +111,9 @@ ul{
     background:#0D1B3D;
     color:#FFD700;
     text-decoration:none;
-    border-radius:6px;
+    border-radius:8px;
     font-weight:bold;
+    animation:glow 2s infinite;
 }
 .button:hover{
     background:#09142e;
@@ -104,6 +125,12 @@ ul{
 
 <div class="container">
 
+<!-- Title & Product ID -->
+<div class="product-title">
+<h2>Men’s Anti-Wrinkle Knit Pullover Sweater</h2>
+<p><strong>Product ID / Name:</strong> 47742577</p>
+</div>
+
 <!-- Images -->
 <div class="image-gallery">
 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCUbShSUOhVxbiUG3jLP4iF1QZHzPH8ShUyB3jI5v3i6MJjf8HLreRyIGqYVBGGLlvl7x3ZJ3CCd38HffD01x8HLQaQLG84xccgcF2yk1eJwgHDHEj22Gardb2K22TXjU0QVOkuguxyZUmt1h0L84qQxLa6_vlTX0oQInmD6zQg-_IzNtLN7QpvjYsxvs/s720/1766227037586.png">
@@ -113,44 +140,40 @@ ul{
 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB2j88a4Ffw9NDl7ZXj6quxa_xy4X3LBMCQZ5i7GWp32Lsl7uxRPDP87FfogLOdVzolZyDrTolm_hlqE8ZhiDqhabNi_K7fhhFHJd8RJZP5pauZTPC9w78C4IUlymjgHOHUDtX2EUG_ekAmjePceawA-XPYqCrTsbEAf6fcJ0glLAj90amP5mSL82lTU0/s720/1766227008734.png">
 </div>
 
-<!-- Title -->
-<h2>Men’s Anti-Wrinkle Knit Pullover Sweater</h2>
-
 <!-- Price -->
 <div class="price-box">
 <strong>Mini Order:</strong> 2 Set<br>
-<strong>Price:</strong> <span style="color:#0D1B3D; font-weight:bold;">2 Set = $26.7</span>
+<strong>Price:</strong> <span style="color:#FFD700;">2 Set = $26.7</span>
 </div>
 
 <!-- Description -->
 <div class="description">
-Upgrade your winter wardrobe with this stylish men’s anti-wrinkle pullover sweater made from 100% premium polyester knit fabric. Designed with elegant patchwork and jacquard knitting, this sweater offers a modern fashion look with long-lasting durability. The classic crew neck and long sleeves provide a comfortable fit for daily wear, office use, and casual outings. Soft, lightweight, and easy to maintain, this knitted jumper keeps you warm without feeling heavy, making it a perfect choice for men who prefer classy and trendy knitwear.
+Upgrade your winter wardrobe with this stylish men’s anti-wrinkle pullover sweater made from 100% premium polyester knit fabric. Designed with elegant patchwork and jacquard knitting, this sweater offers a modern fashion look with long-lasting durability. The classic crew neck and long sleeves provide a comfortable fit for daily wear, office use, and casual outings. Soft, lightweight, and easy to maintain, this knitted jumper keeps you warm without feeling heavy.
 </div>
 
 <!-- Bullet Points -->
 <ul>
-<li>✔ Anti-wrinkle fabric for a neat and polished look</li>
-<li>✔ 100% polyester knit material</li>
-<li>✔ Patchwork jacquard design</li>
-<li>✔ Crew neck with long sleeves</li>
-<li>✔ Ideal for office, casual, and winter wear</li>
+<li>✔ Anti-wrinkle premium knit fabric</li>
+<li>✔ 100% polyester jacquard knit</li>
+<li>✔ Modern patchwork fashion design</li>
+<li>✔ Crew neck & long sleeves</li>
+<li>✔ Ideal for office & casual wear</li>
 </ul>
 
 <!-- Fabric & Care -->
 <div class="description">
-<h3>Fabric & Care</h3>
+<h3 style="color:#FFD700;">Fabric & Care</h3>
 <ul>
 <li>Fabric: 100% Polyester Knit</li>
-<li>Soft, breathable & lightweight</li>
 <li>Machine wash cold</li>
 <li>Do not bleach</li>
-<li>Dry flat to maintain shape</li>
+<li>Dry flat for best shape</li>
 </ul>
 </div>
 
 <!-- Size Chart -->
 <div class="size-ticket">
-<h2>Men’s Size Chart</h2>
+<h2 style="color:#FFD700;">Men’s Size Chart</h2>
 <table>
 <tr><th>Size</th><th>Chest</th><th>Length</th><th>Sleeve</th></tr>
 <tr><td>M</td><td>38"</td><td>26"</td><td>24"</td></tr>
@@ -172,3 +195,4 @@ Upgrade your winter wardrobe with this stylish men’s anti-wrinkle pullover swe
 
 </body>
 </html>
+
