@@ -1,4 +1,66 @@
 
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* Arabic Luxury Title */
+.arabic-title {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 40px;        /* Length control */
+    font-weight: 800;
+    color: #FFD700;         /* Gold */
+    text-align: center;
+    direction: rtl;
+    margin: 10px auto;
+    padding: 6px 18px;      /* Height reduced */
+    width: fit-content;     /* Auto adjust for GitHub */
+    border-radius: 8px;
+
+    /* Glow */
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 8px #ffffff,
+      0 0 14px rgba(255,255,255,0.8);
+
+    animation: softGlow 2.2s ease-in-out infinite alternate;
+}
+
+/* Smooth luxury glow */
+@keyframes softGlow {
+    from {
+        text-shadow:
+          0 0 3px #ffffff,
+          0 0 6px #ffffff,
+          0 0 10px rgba(255,255,255,0.6);
+    }
+    to {
+        text-shadow:
+          0 0 6px #ffffff,
+          0 0 12px #ffffff,
+          0 0 20px rgba(255,255,255,0.9);
+    }
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+    .arabic-title {
+        font-size: 32px;
+        padding: 5px 14px;
+    }
+}
+</style>
+</head>
+
+<body style="background:#000;">
+
+<div class="arabic-title">
+الحمد لله
+</div>
+
+</body>
+</html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
