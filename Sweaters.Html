@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacky Finds New Premimum collection</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Poppins,Arial,sans-serif;
+  text-align:center;
+}
+
+/* Title */
+h1{
+  margin:30px 10px;
+  font-size:46px;
+  font-weight:800;
+  color:#fff;
+  text-shadow:0 0 10px gold,0 0 30px goldenrod;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+/* Card */
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.card img{
+  width:240px;
+  height:320px;
+  object-fit:cover;
+  border-radius:15px;
+  animation:goldGlow 3s infinite alternate;
+}
+
+/* Gold Glow Animation */
+@keyframes goldGlow{
+  0%{box-shadow:0 0 8px gold;}
+  100%{box-shadow:0 0 35px goldenrod;}
+}
+
+/* Buy Now Button */
+.buy-btn {
+  display: inline-block;
+  margin-top:10px;
+  padding:10px 25px;
+  background: linear-gradient(45deg, gold, goldenrod);
+  color: black;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px gold;
+  transition: all 0.3s ease;
+}
+.buy-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px goldenrod;
+}
+</style>
+</head>
+
+<body>
