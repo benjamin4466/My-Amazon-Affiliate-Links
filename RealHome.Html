@@ -1,0 +1,254 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacky Finds New Premium Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* HEADER TITLE */
+.header-bar {
+  background-color: #001f4d; /* Dark Blue */
+  padding: 25px 0;
+  text-align: center;
+  position: relative;
+}
+.header-bar h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px gold, 0 0 35px goldenrod, 0 0 50px #ffd700;
+  margin: 0;
+  animation: goldGlowTitle 2s infinite alternate;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+@keyframes goldGlowTitle{
+  0%{ text-shadow: 0 0 15px gold,0 0 35px goldenrod; }
+  100%{ text-shadow: 0 0 25px #ffd700,0 0 60px gold,0 0 90px goldenrod; }
+}
+
+/* LIVE TV Style Headline Slider under header */
+.headline-slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.headline-slider {
+  display: flex;
+  animation: slideHeadline 20s linear infinite;
+  justify-content: center;
+}
+.headline-slider a img {
+  width: auto;
+  height: 120px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@keyframes slideHeadline{
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Center live TV Banners */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.slider {
+  display: flex;
+  animation: slide 20s linear infinite;
+  justify-content: center;
+}
+.slider a img {
+  width: auto;
+  height: 140px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@keyframes slide{
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Filter Buttons */
+.filters {
+  margin: 20px 0;
+}
+.filters button {
+  background: #111;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.filters button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Product Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  position: relative;
+}
+.card img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  animation: goldGlow 3s infinite alternate;
+}
+@keyframes goldGlow {
+  0% { box-shadow: 0 0 8px gold; }
+  100% { box-shadow: 0 0 35px goldenrod; }
+}
+.price-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #ffd700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Footer: Support & Social */
+.footer {
+  margin: 30px 0;
+}
+.footer button {
+  margin: 5px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.support-btn {
+  background: #006400;
+  color: #ffd700;
+}
+.support-btn:hover {
+  background: #00a000;
+}
+.social-btn {
+  background: #111;
+  color: #fff;
+  border: 2px solid #ffd700;
+}
+.social-btn:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .headline-slider a img, .slider a img { height: 100px; margin:0 5px;}
+  .grid { gap: 15px; }
+  .card img { width: 100%; height: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header-bar">
+  <h1>Hacky Finds New Premium Collection</h1>
+</div>
+
+<!-- Headline Slider under header -->
+<div class="headline-slider-container">
+  <div class="headline-slider">
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha9s2rQqEaptPzRYYIRLlnyeNnEOdaUj_TKuykOR9Jj_2TA8A5aFUj_O1zDNXGBSW8HIJgKd9-5RmTyGnkERZ9rxEWWET0wdb76B-s4185CXjmGvEXE4_IAqLShTffoY-kfVhPTA-MxHZZpNDfKqlqrSleZxQti0UJvIknhX35YPm7p74EdHvLl1PemGc/s640/IMG_20251223_122542.jpg" alt="Headline1"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_RtHwY2LDgmcFlvN5jjO3r_mOTVvFSVeRz75zfRjHD9gS7Pmacy3t-HTDe8UhfeTxzW3PW6I2A8rasbXbR7mUsj21FVO65jLvPWGJzbZwEfZKuK_AIv7D7vnfhYHjoLxRsB_HGp9lws8kdtRmuqTU6915lDtZnt9GHZohyFsvSB9OPIyE8S_LZA7_sHg/s644/IMG_20251223_122508.jpg" alt="Headline2"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfFdFxigi1OOqsvaV5NRPfvrLSTj6lFD9xz47Kp-fC8Z4f4g41L0QVJugPQEs0lMrfUQBukn3V-SkD6dlxctfHUPz495shheLQg6GSdLSa5XY5R-Qs1FDT9rt2LsxQvKwjgddm4PikXMxgMJEXYTutdruFLFLcg7thWX0CC-_szto6cvUwDvTfXh-L5qI/s624/IMG_20251223_122451.jpg" alt="Headline3"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXtlzb3jjr6MbOrFy8GwggdZpPfKWRmFECkNaaTHKyprTPKECgyHjcM2AmKkbyzVlG1S2zcarnZhBwJk9OQaVCweusFqMrNBgFBTFaBQEXGy7Mu2CbGCmNVuJntuLBJxIBAM9Vy4V3kk_w-ybBMAF57ehFeUgBDRVHjlZnEPgQZqnmgpT1qFTLM0Sudu0/s652/IMG_20251223_122431.jpg" alt="Headline4"></a>
+    <!-- Duplicate for continuous scrolling -->
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha9s2rQqEaptPzRYYIRLlnyeNnEOdaUj_TKuykOR9Jj_2TA8A5aFUj_O1zDNXGBSW8HIJgKd9-5RmTyGnkERZ9rxEWWET0wdb76B-s4185CXjmGvEXE4_IAqLShTffoY-kfVhPTA-MxHZZpNDfKqlqrSleZxQti0UJvIknhX35YPm7p74EdHvLl1PemGc/s640/IMG_20251223_122542.jpg" alt="Headline1"></a>
+  </div>
+</div>
+
+<!-- Center live TV Banners -->
+<div class="slider-container">
+  <div class="slider">
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha9s2rQqEaptPzRYYIRLlnyeNnEOdaUj_TKuykOR9Jj_2TA8A5aFUj_O1zDNXGBSW8HIJgKd9-5RmTyGnkERZ9rxEWWET0wdb76B-s4185CXjmGvEXE4_IAqLShTffoY-kfVhPTA-MxHZZpNDfKqlqrSleZxQti0UJvIknhX35YPm7p74EdHvLl1PemGc/s640/IMG_20251223_122542.jpg" alt="Banner1"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_RtHwY2LDgmcFlvN5jjO3r_mOTVvFSVeRz75zfRjHD9gS7Pmacy3t-HTDe8UhfeTxzW3PW6I2A8rasbXbR7mUsj21FVO65jLvPWGJzbZwEfZKuK_AIv7D7vnfhYHjoLxRsB_HGp9lws8kdtRmuqTU6915lDtZnt9GHZohyFsvSB9OPIyE8S_LZA7_sHg/s644/IMG_20251223_122508.jpg" alt="Banner2"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfFdFxigi1OOqsvaV5NRPfvrLSTj6lFD9xz47Kp-fC8Z4f4g41L0QVJugPQEs0lMrfUQBukn3V-SkD6dlxctfHUPz495shheLQg6GSdLSa5XY5R-Qs1FDT9rt2LsxQvKwjgddm4PikXMxgMJEXYTutdruFLFLcg7thWX0CC-_szto6cvUwDvTfXh-L5qI/s624/IMG_20251223_122451.jpg" alt="Banner3"></a>
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXtlzb3jjr6MbOrFy8GwggdZpPfKWRmFECkNaaTHKyprTPKECgyHjcM2AmKkbyzVlG1S2zcarnZhBwJk9OQaVCweusFqMrNBgFBTFaBQEXGy7Mu2CbGCmNVuJntuLBJxIBAM9Vy4V3kk_w-ybBMAF57ehFeUgBDRVHjlZnEPgQZqnmgpT1qFTLM0Sudu0/s652/IMG_20251223_122431.jpg" alt="Banner4"></a>
+  </div>
+</div>
+
+<!-- Filter Buttons -->
+<div class="filters">
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('dress')">Dresses</button>
+  <button onclick="filterCategory('shoes')">Shoes</button>
+  <button onclick="filterCategory('bags')">Bags</button>
+</div>
+
+<!-- Product Grid -->
+<div class="grid" id="productGrid">
+  <!-- Example card -->
+  <div class="card" data-category="dress">
+    <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL-784gHKP9rSWn160QCiewIECC_cHUDKwxbuW_q5xv6vuItTWRfjw9Gcp1o4j5ABKS19Bx2l9In_ruLugGmGGxLeMRrK3sJwugVZXTgz27Gq4WsOjW3SIxw743efGzN72IktSWr5af-8tpffMIxtV50LVJzR0bXT_DPNZbKIXIrWLghgVoScIO715syw/s720/IMG_20251222_030941.png" alt="Product1"></a>
+    <div class="price-tag">$62.5</div>
+  </div>
+  <!-- Repeat all 25 product cards here -->
+</div>
+
+<!-- Footer: Support + Social -->
+<div class="footer">
+  <button class="support-btn">Customer Support</button>
+  <button class="support-btn">Live Chat</button>
+
+  <button class="social-btn">Facebook</button>
+  <button class="social-btn">Instagram</button>
+  <button class="social-btn">TikTok</button>
+  <button class="social-btn">YouTube</button>
+</div>
+
+<script>
+function filterCategory(category){
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if(category==='all' || card.dataset.category===category){
+      card.style.display='block';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+</script>
+
+</body>
+  </html>
+
+      
