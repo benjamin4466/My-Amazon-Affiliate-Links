@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacky Finds New Premimum collection</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Poppins,Arial,sans-serif;
+  text-align:center;
+}
+
+/* LOGO */
+.logo{
+  font-size:44px;
+  font-weight:900;
+  margin:25px 10px;
+  animation:logoGlow 2.5s infinite alternate;
+}
+@keyframes logoGlow{
+  from{text-shadow:0 0 10px gold}
+  to{text-shadow:0 0 35px goldenrod}
+}
+
+/* LIVE BANNER */
+.banner{
+  overflow:hidden;
+  white-space:nowrap;
+  padding:15px 0;
+}
+.banner-track{
+  display:inline-block;
+  animation:scroll 22s linear infinite;
+}
+.banner img{
+  height:110px;
+  margin:0 15px;
+  border-radius:12px;
+  box-shadow:0 0 18px gold;
+}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* FILTER BUTTONS */
+.filters{
+  margin:30px 10px;
+}
+.filters button{
+  background:#0b1b3f;
+  color:yellow;
+  border:none;
+  padding:11px 26px;
+  margin:6px;
+  font-size:15px;
+  border-radius:30px;
+  cursor:pointer;
+  box-shadow:0 0 15px gold;
+}
+.filters button:hover{
+  background:#123c9a;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+  padding:25px;
+}
+
+/* CARD */
+.card img{
+  width:240px;
+  height:320px;
+  object-fit:cover;
+  border-radius:16px;
+  animation:goldGlow 3s infinite alternate;
+}
+@keyframes goldGlow{
+  from{box-shadow:0 0 12px gold}
+  to{box-shadow:0 0 38px goldenrod}
+}
+
+/* PRICE */
+.price{
+  margin:10px 0 6px;
+  font-size:16px;
+  color:#ffd700;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:10px 30px;
+  background:#0b1b3f;
+  color:yellow;
+  text-decoration:none;
+  border-radius:22px;
+  box-shadow:0 0 16px gold;
+}
+.buy-btn:hover{
+  transform:scale(1.08);
+}
+
+/* FILTER HIDE */
+.hide{display:none}
+</style>
+</head>
+
+<body>
+
+<div class="logo">HackyFinds ✨</div>
+
+<!-- LIVE BANNER (HEADINGS STYLE) -->
+<div class="banner">
+  <div class="banner-track">
+    <img src="BANNER_IMAGE_1">
+    <img src="BANNER_IMAGE_2">
+    <img src="BANNER_IMAGE_3">
+    <img src="BANNER_IMAGE_4">
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('party')">Party Wear</button>
+  <button onclick="filterItems('wedding')">Wedding</button>
+  <button onclick="filterItems('new')">New Arrival</button>
+</div>
+
+<!-- PRODUCTS (25 CARDS) -->
+<div class="grid">
+
+<!-- COPY THIS BLOCK 25 TIMES -->
+<div class="card party">
+  <img src="IMAGE_URL_1">
+  <div class="price">Price yahan likhein</div>
+  <a href="BUY_LINK_1" class="buy-btn" target="_blank">Buy Now</a>
+</div>
+
+<div class="card wedding">
+  <img src="IMAGE_URL_2">
+  <div class="price">Price yahan likhein</div>
+  <a href="BUY_LINK_2" class="buy-btn" target="_blank">Buy Now</a>
+</div>
+
+<div class="card new">
+  <img src="IMAGE_URL_3">
+  <div class="price">Price yahan likhein</div>
+  <a href="BUY_LINK_3" class="buy-btn" target="_blank">Buy Now</a>
+</div>
+
+<!-- Repeat till IMAGE_URL_25 -->
+
+</div>
+
+<script>
+function filterItems(cat){
+  document.querySelectorAll('.card').forEach(card=>{
+    if(cat==='all'||card.classList.contains(cat)){
+      card.classList.remove('hide');
+    }else{
+      card.classList.add('hide');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
