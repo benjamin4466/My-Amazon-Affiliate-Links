@@ -1,0 +1,268 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacky Finds – New Premium Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:'Segoe UI',Arial,sans-serif;
+  text-align:center;
+}
+
+/* GOLD GLOW */
+@keyframes goldGlow{
+  0%{box-shadow:0 0 10px goldenrod;}
+  50%{box-shadow:0 0 25px gold;}
+  100%{box-shadow:0 0 10px goldenrod;}
+}
+
+/* LOGO */
+.logo{
+  font-size:42px;
+  font-weight:bold;
+  margin:20px 0 10px;
+  animation:goldGlow 2s infinite;
+}
+
+/* LIVE HEADLINE */
+.live-headline{
+  max-width:1100px;
+  margin:15px auto 25px;
+  background:#111;
+  border:1px solid gold;
+  border-radius:10px;
+  overflow:hidden;
+  animation:goldGlow 2s infinite;
+}
+.live-track{
+  display:flex;
+  width:300%;
+  animation:headlineSlide 15s infinite linear;
+}
+.live-item{
+  width:100%;
+  padding:12px;
+  font-size:18px;
+  color:gold;
+  white-space:nowrap;
+}
+
+@keyframes headlineSlide{
+  0%,30%{transform:translateX(0)}
+  35%,65%{transform:translateX(-100%)}
+  70%,100%{transform:translateX(-200%)}
+}
+
+/* TITLE */
+h1{
+  font-size:32px;
+  margin-bottom:25px;
+}
+
+/* FILTERS */
+.filters{
+  padding:10px;
+}
+.filters button{
+  background:#111;
+  color:gold;
+  border:1px solid gold;
+  padding:10px 18px;
+  margin:6px;
+  border-radius:8px;
+  cursor:pointer;
+  animation:goldGlow 2s infinite;
+}
+
+/* CENTER BANNER */
+.center-banner{
+  max-width:1100px;
+  margin:30px auto;
+  overflow:hidden;
+  border-radius:18px;
+  animation:goldGlow 2s infinite;
+}
+.track{
+  display:flex;
+  width:300%;
+  animation:slide 18s infinite;
+}
+.track a{width:100%}
+.track img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+/* SLIDE */
+@keyframes slide{
+  0%,30%{transform:translateX(0)}
+  35%,65%{transform:translateX(-100%)}
+  70%,100%{transform:translateX(-200%)}
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  padding:25px;
+  max-width:1300px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  padding:12px;
+  border-radius:16px;
+  animation:goldGlow 2s infinite;
+}
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* PRICE */
+.price{
+  margin:10px 0;
+  font-size:18px;
+  color:gold;
+}
+
+/* BUY BUTTON */
+.buy-btn{
+  background:#0033cc;
+  color:yellow;
+  border:none;
+  padding:12px 22px;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+  animation:goldGlow 2s infinite;
+}
+
+/* SUPPORT */
+.support{
+  margin:40px 0 20px;
+}
+.support button{
+  background:darkgreen;
+  color:yellow;
+  border:none;
+  padding:12px 22px;
+  margin:8px;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+  animation:goldGlow 2s infinite;
+}
+
+/* SOCIAL */
+.social{
+  margin:25px 0 40px;
+}
+.social a img{
+  width:48px;
+  margin:8px;
+  animation:goldGlow 2s infinite;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .logo{font-size:34px}
+  h1{font-size:26px}
+  .live-item{font-size:15px}
+  .track img{height:240px}
+  .card img{height:260px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">Hacky Finds</div>
+
+<!-- LIVE HEADLINE -->
+<div class="live-headline">
+  <div class="live-track">
+    <div class="live-item">🔥 New Premium Party Wear Just Arrived – Shop Now</div>
+    <div class="live-item">✨ Bridal Luxury Collection – Limited Stock</div>
+    <div class="live-item">💎 Trending Designs – Fast Delivery All Over Pakistan</div>
+  </div>
+</div>
+
+<h1>Hacky Finds – New Premium Collection</h1>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('party')">Party Wear</button>
+  <button onclick="filterItems('bridal')">Bridal</button>
+  <button onclick="filterItems('new')">New Arrivals</button>
+</div>
+
+<!-- CENTER BANNER -->
+<div class="center-banner">
+  <div class="track">
+    <a href="PASTE_LINK"><img src="PASTE_IMAGE"></a>
+    <a href="PASTE_LINK"><img src="PASTE_IMAGE"></a>
+    <a href="PASTE_LINK"><img src="PASTE_IMAGE"></a>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="grid">
+
+<div class="card party new">
+  <img src="PASTE_IMAGE">
+  <div class="price">Price yahan likhen</div>
+  <button class="buy-btn" onclick="location.href='PASTE_LINK'">BUY NOW</button>
+</div>
+
+<div class="card bridal">
+  <img src="PASTE_IMAGE">
+  <div class="price">Price yahan likhen</div>
+  <button class="buy-btn">BUY NOW</button>
+</div>
+
+</div>
+
+<!-- SUPPORT -->
+<div class="support">
+  <h2>Customer Support</h2>
+  <button>WhatsApp Support</button>
+  <button>Email Support</button>
+</div>
+
+<!-- SOCIAL -->
+<div class="social">
+  <a href="PASTE_INSTAGRAM"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+  <a href="PASTE_FACEBOOK"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"></a>
+  <a href="PASTE_TWITTER"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
+  <a href="PASTE_TIKTOK"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+  <a href="PASTE_YOUTUBE"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+</div>
+
+<script>
+function filterItems(cat){
+  let cards=document.querySelectorAll('.card');
+  cards.forEach(c=>{
+    c.style.display = (cat==='all'||c.classList.contains(cat)) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
+
+
+
