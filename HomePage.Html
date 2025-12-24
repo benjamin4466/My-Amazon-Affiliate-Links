@@ -139,6 +139,22 @@ h1{
 
 /* FILTER HIDE */
 .hide{display:none}
+/* SUPPORT */
+.support button{
+  background:darkgreen;
+  color:yellow;
+  border:none;
+  padding:12px 20px;
+  margin:10px;
+  animation:goldGlow 2s infinite;
+}
+
+/* SOCIAL */
+.social img{
+  width:50px;
+  margin:10px;
+  animation:goldGlow 2s infinite;
+}
 </style>
 </head>
 
@@ -201,6 +217,33 @@ function filterItems(cat){
   });
 }
 </script>
+<!-- SUPPORT -->
+<div class="support">
+  <h2>Customer Support</h2>
+  <button>WhatsApp Support</button>
+  <button>Email Support</button>
+</div>
+
+<!-- SOCIAL -->
+<div class="social">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+</div>
+
+<script>
+function filterItems(cat){
+  let cards=document.querySelectorAll('.card');
+  cards.forEach(c=>{
+    if(cat==='all'||c.classList.contains(cat)){
+      c.style.display='block';
+    }else{
+      c.style.display='none';}
+  });
+}
+</script>
 
 </body>
 </html>
+
+
