@@ -4,6 +4,47 @@
 <meta charset="UTF-8">
 <title>Hacky Finds New Premimum collection</title>
 <style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Poppins,Arial,sans-serif;
+  text-align:center;
+}
+
+/* LOGO */
+.logo{
+  font-size:60px;
+  font-weight:900;
+  margin:25px 10px;
+  animation:logoGlow 3.5s infinite alternate;
+}
+@keyframes logoGlow{
+  from{text-shadow:0 0 15px gold}
+  to{text-shadow:0 0 40px goldenrod}
+}
+
+/* LIVE BANNER */
+.banner{
+  overflow:hidden;
+  white-space:nowrap;
+  padding:20px 0;
+}
+.banner-track{
+  display:inline-block;
+  animation:scroll 22s linear infinite;
+}
+.banner img{
+  height:250px;
+  margin:0 10px;
+  border-radius:20px;
+  box-shadow:0 0 30px gold;
+}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 body{
   margin:0;
   background:#000;
