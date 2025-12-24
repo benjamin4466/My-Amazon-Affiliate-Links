@@ -1,0 +1,184 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Winter Embriodery Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:'Segoe UI', Arial, sans-serif;
+  text-align:center;
+}
+
+/* Animations */
+@keyframes goldGlow {
+  0%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+  50%{ box-shadow:0 0 28px rgba(255,215,0,1); }
+  100%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+}
+@keyframes textGlow {
+  0%{ text-shadow:0 0 6px gold; }
+  50%{ text-shadow:0 0 22px gold; }
+  100%{ text-shadow:0 0 6px gold; }
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* Animated Logo */
+.hacky-logo{
+  display:inline-block;
+  margin:15px auto 25px;
+  padding:10px 28px;
+  background:#0b1f4b;
+  border-radius:14px;
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#ffeb3b;
+  animation:goldGlow 2.8s infinite;
+}
+.hacky-logo span{
+  color:#ffffff;
+}
+
+/* Title */
+h1{
+  color:#FFD700;
+  font-size:34px;
+  margin-bottom:10px;
+  animation:textGlow 2.5s infinite;
+}
+
+/* Product Info */
+.product-info{
+  font-size:15px;
+  color:#ddd;
+  margin-bottom:30px;
+}
+.product-info span{
+  color:#ffeb3b;
+  font-weight:bold;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+.gallery img{
+  width:350px;
+  height:380px;
+  object-fit:cover;
+  border-radius:16px;
+  animation:goldGlow 3s infinite;
+}
+
+/* Description */
+.description{
+  max-width:900px;
+  margin:45px auto 25px;
+  font-size:16px;
+  line-height:1.9;
+}
+
+/* Buttons */
+.buttons{
+  margin:30px 0 50px;
+}
+.buttons a{
+  display:inline-block;
+  margin:10px;
+  padding:14px 34px;
+  background:#0b1f4b;
+  color:#ffeb3b;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  box-shadow:0 0 14px rgba(0,120,255,.8);
+  transition:.3s;
+}
+.buttons a:hover{
+  box-shadow:0 0 26px gold;
+  transform:translateY(-3px);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  h1{ font-size:26px; }
+  .gallery img{
+    width:92%;
+    height:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Animated Logo -->
+<div class="hacky-logo">
+  Hacky<span>Finds</span>
+</div>
+
+<h1>Trending Womens Maxi Dress For Partie</h1>
+
+<div class="product-info">
+Product Name: <span>Winter Embriodery Collection</span> |
+Product ID: <span>36891458</span>
+</div>
+
+<!-- Images -->
+<div class="gallery">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFcgxLbG35a6-ehaDD5d5_cAGiU688UNysOMlwDw11LyBdH8TuOmNMiJ8ErMK6PWKW1b4CKnuYoJvajSF1dQ-szV-2W9qtWX-rpu-59fYdLJClX1fQDDedaVtG5fqk1ygLbtPWwjmGfVpB10T6PDQZU041Ke7Ek9gIBC-DfOIuZH3cMia4O5mQ2lz_rDg/s1401/media_image-70b7090529944adca6e37d293c378ed9_87748608-a41d-42ae-a29a-dc83faef347a.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_zzsFhJwMRVjIJzxih5YwMbA0dLiQf6z_D0IPc-z6oBjls3hqzfzE65fNhjNy-gK3E6IjQbjVq91XNR5QbWkF6w4isbXyDoWKRT9eJ45ahINfmlXxy925xAExP_P0F26-ekr62PM_jrEVb7su9S7f9uyl7merBUO4k58yAfo7iF3PP-bHwpjmKVyr8EY/s1400/media_image-d3d2e24fd54a4fe39131545b423f21be_f19418ab-f5d5-4ee8-9b0c-abf58020b8cb.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRNs0f1tb_J-kjp00lQQtvZ7XV2NSaGiv3Z4618mR3iFv3D8m1Vcbxy0uKv3XjNYNSELmC2MRPlafEd28NVr17fdZXxDZEhma0-gOiW5JMgokwqu-vQIZXiS8ySTLwbNU6cI6pQHAJ4cBjBTFcdLlgxTTf9D5YyzNzrm2hle8RO69CZw2bgWU4N0h24kk/s1400/media_image-6de95b7c67f44593a70c366cdf3da71d_e0d5444d-abb5-4900-8f8b-7f8074d1ea69.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhF-dJHIHwLGZsNsEeEgh2KlQ9ZEG_Cbq_aWKrcy0Vjl22EB3GLM59gkujKEV8aA3Cn3IByN-Ne8Bu8e9E3Lx2wZDszPAJ1rYpVehixpyXoS41gFJ9kcnMJ6QmEZ7dolzJD3KDjFW114VqyWEaSBHxYDpHbQETkDPmGG0hwiMvRfjRPNMojhFNgmyNlT20/s1400/media_image-81f5c354f6d24c3798e52c7f05b4807e_d92da8f2-52c7-42fc-be24-83ca9ca52932.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBu2Sla1FsbyCkNeJ0_mdEY_lYUJbOENBrp6c-xWm4Qfa5FKH-bqtT0THCSjI2ADdi_bhBOwIKVENjWhe28hRX9U-hzOqCvZD_OfNCjl-h5ZF-K4KqCCgD-hbyDZMXTT28XSzP-oVLpN7YhLhCIl_t-h0DKhcdejKGGPjM0_7GgPmG9h9eHt9MaHwtXfo/s320/media_image-16f394059a084d2d8dfb0237e1c2d54b_991719c5-ef17-4570-8ecd-82f9504f8a31.jpg">
+</div>
+
+<!-- Description -->
+<div class="description">
+Bottom Style	Straight trouser
+Color Type	Blue
+Dupatta Fabric	Wool
+Lining Attached	As shown in picture
+Number Of Pieces	3 piece - top + bottom + dupatta
+Product Type	Daily/basic wear
+Season	Winter wear
+Shirt Fabric	Linen
+Top Fit	Regular fit
+Top Style	Long kurta
+Trouser Fabrics	Linen
+Work Technique	Embroidered
+Disclaimer:
+Actual product color may vary slightly from
+
+</div>
+
+<!-- Buttons with link space -->
+<div class="buttons">
+<a href="PASTE_PRICE_LINK_HERE">Price: Rs — View</a>
+<a href="PASTE_BUY_LINK_HERE">Buy Now</a>
+<a href="PASTE_WHATSAPP_LINK_HERE">Order on WhatsApp</a>
+</div>
+
+</div>
+
+</body>
+</html>
+
