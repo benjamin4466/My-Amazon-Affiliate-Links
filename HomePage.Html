@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Hacky Finds New Premimum collection</title>
+
 <style>
 *{box-sizing:border-box}
 body{
@@ -15,64 +16,35 @@ body{
 
 /* LOGO */
 .logo{
-  font-size:80px;
+  font-size:44px;
   font-weight:900;
   margin:25px 10px;
-  animation:logoGlow 4.5s infinite alternate;
+  animation:logoGlow 2.5s infinite alternate;
 }
 @keyframes logoGlow{
-  from{text-shadow:0 0 20px gold}
-  to{text-shadow:0 0 50px goldenrod}
+  from{text-shadow:0 0 10px gold}
+  to{text-shadow:0 0 35px goldenrod}
 }
 
 /* LIVE BANNER */
 .banner{
   overflow:hidden;
   white-space:nowrap;
-  padding:20px 0;
+  padding:15px 0;
 }
 .banner-track{
   display:inline-block;
-  animation:scroll 32s linear infinite;
+  animation:scroll 22s linear infinite;
 }
 .banner img{
-  height:250px;
-  margin:0 10px;
-  border-radius:30px;
-  box-shadow:0 0 50px gold;
+  height:110px;
+  margin:0 15px;
+  border-radius:12px;
+  box-shadow:0 0 18px gold;
 }
 @keyframes scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
-}
-body{
-  margin:0;
-  background:#000;
-  color:#fff;
-  font-family:'Segoe UI',Arial,sans-serif;
-  text-align:center;
-}
-
-/* GOLD GLOW */
-@keyframes goldGlow{
-  0%{box-shadow:0 0 30px goldenrod;}
-  50%{box-shadow:0 0 35px gold;}
-  100%{box-shadow:0 0 30px goldenrod;}
-}
-
-/* LOGO */
-.logo{
-  font-size:42px;
-  font-weight:bold;
-  margin:25px 0;
-  color:#fff;
-  animation:goldGlow 2s infinite;
-}
-
-/* TITLE */
-h1{
-  font-size:48px;
-  margin-bottom:30px;
 }
 
 /* FILTER BUTTONS */
@@ -97,17 +69,17 @@ h1{
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(440px,1fr));
-  gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
   padding:25px;
 }
 
 /* CARD */
 .card img{
-  width:180px;
-  height:210px;
+  width:240px;
+  height:320px;
   object-fit:cover;
-  border-radius:6px;
+  border-radius:16px;
   animation:goldGlow 3s infinite alternate;
 }
 @keyframes goldGlow{
@@ -139,27 +111,10 @@ h1{
 
 /* FILTER HIDE */
 .hide{display:none}
-/* SUPPORT */
-.support button{
-  background:darkgreen;
-  color:yellow;
-  border:none;
-  padding:12px 20px;
-  margin:10px;
-  animation:goldGlow 2s infinite;
-}
-
-/* SOCIAL */
-.social img{
-  width:50px;
-  margin:10px;
-  animation:goldGlow 2s infinite;
-}
 </style>
 </head>
 
 <body>
-
 <div class="logo">HackyFinds ✨</div>
 
 <!-- LIVE BANNER (HEADINGS STYLE) -->
