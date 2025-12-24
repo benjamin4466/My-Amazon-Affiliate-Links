@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Winter Daily Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:'Segoe UI', Arial, sans-serif;
+  text-align:center;
+}
+
+/* Animations */
+@keyframes goldGlow {
+  0%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+  50%{ box-shadow:0 0 28px rgba(255,215,0,1); }
+  100%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+}
+@keyframes textGlow {
+  0%{ text-shadow:0 0 6px gold; }
+  50%{ text-shadow:0 0 22px gold; }
+  100%{ text-shadow:0 0 6px gold; }
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* Animated Logo */
+.hacky-logo{
+  display:inline-block;
+  margin:15px auto 25px;
+  padding:10px 28px;
+  background:#0b1f4b;
+  border-radius:14px;
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#ffeb3b;
+  animation:goldGlow 2.8s infinite;
+}
+.hacky-logo span{
+  color:#ffffff;
+}
+
+/* Title */
+h1{
+  color:#FFD700;
+  font-size:34px;
+  margin-bottom:10px;
+  animation:textGlow 2.5s infinite;
+}
+
+/* Product Info */
+.product-info{
+  font-size:15px;
+  color:#ddd;
+  margin-bottom:30px;
+}
+.product-info span{
+  color:#ffeb3b;
+  font-weight:bold;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+.gallery img{
+  width:350px;
+  height:380px;
+  object-fit:cover;
+  border-radius:16px;
+  animation:goldGlow 3s infinite;
+}
+
+/* Description */
+.description{
+  max-width:900px;
+  margin:45px auto 25px;
+  font-size:16px;
+  line-height:1.9;
+}
+
+/* Buttons */
+.buttons{
+  margin:30px 0 50px;
+}
+.buttons a{
+  display:inline-block;
+  margin:10px;
+  padding:14px 34px;
+  background:#0b1f4b;
+  color:#ffeb3b;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  box-shadow:0 0 14px rgba(0,120,255,.8);
+  transition:.3s;
+}
+.buttons a:hover{
+  box-shadow:0 0 26px gold;
+  transform:translateY(-3px);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  h1{ font-size:26px; }
+  .gallery img{
+    width:92%;
+    height:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Animated Logo -->
+<div class="hacky-logo">
+  Hacky<span>Finds</span>
+</div>
+
+<h1>Winter Daily Wear</h1>
+
+<div class="product-info">
+Product Name: <span>Wimter Daily Wear</span> |
+Product ID: <span>3567955</span>
+</div>
+
+<!-- Images -->
+<div class="gallery">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnLHz2mTaSvSk9dcFZX-rsASY6VfSV_BEFD1D1VfJyskAtU3pOp06NaMEkR1nVUKRZx1jSFMRxfyZFMwggNv2BERDCU3xZM9m8IjOdQObw_nR1ojkebdrj6BvaCdXI7vPtIgnPmkBnY9P-GAJsNy_gBnbg6uLCOfFHe1-sLF9ei6tFt6oQu-RUCfoQnVE/s840/media_image-9b05791808fc4b18b11b582ce3c79747_342d34af-7852-4c83-812f-e74388e9db3a.png">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhr84TIQie-QjT1gzgbLsl_o9kga5SqDeKPuQYS-QWAakILiMXVugd9ttNH4PDlXEsw7yuAGFdwD_Dv2pc25BVquUU0X1BIw0YYP2SPLGnSIGtt_Lv6YGUdkVyNk0lu1h0sFxknxRUqV5oHF8wR7dckQfbG-ukyMxnzXJpq2gQWGIRfXAJ6nIGR1jUqgw/s1401/media_image-b454d2bcc67e4d31b9b7397a7663a272_008edbc6-f3dc-430d-96d8-8903de9ca43e.png">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCEOZgfbPKLnNg6Bm4ERfG4Ei_hHGHF4LUUv8La8vE0ewGYCMbV270Bz4aiU-912tWHBuIl0sGCzEtQruuZexKtedTNmbyVooGfMtAjEkV2GTrKYcxYQt1amd_Y_FV33shx0ZA-iV670j2waIpaRdS-TcUBkFQes3DlfFVzNSIH1jHbAw8QaxIbv9I6nY/s1400/media_image-80ab906ca4234271a107b8bb44979ed5_b0f4c8a3-473c-47a5-9991-914721a2a399.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSClZOIsNMxPAG6a5pO6t1VmyiwzHItdpjsoN2tEepJiRDq14cTGv5wiHAKnA3v6YO4uevy3ktofNuYVEVUS7TYO8QMh2YUKELigNQZqB_FPvxama6daMohBw-8-chHS-eSsA-mVzgSluC75dDND9ALR-_THF54NN-D-b6nI7CnXirM5PwnveanitW5BE/s1401/media_image-e91ff47b8de54de5ade18b58f9ee2cd4_f0145a9f-dec7-401a-8a7e-04b650c5f31f.png">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG9OK5oqYHUmjGX6CZz-qn_HuTupjBTf0I7WE-jJvATbVbFQ9R4bGSy5Zor0X7zRkyomp4skT120e14vfckgMRFShE2CDVlm6YifTxwxpBqg1HtHP37JFvLuXcrtgAWaVFS1zwpv5HMXxxmrm5kYR6GG2IoJPvhr_4Umhia5WsnH9T7fqPBKoDHhCmQq4/s840/media_image-658cc73f2d834a4ca374fe218caf0eb7_1ffb68a1-7d99-49cd-bb56-c7984db49d99.png">
+</div>
+
+<!-- Description -->
+<div class="description">
+Product Details
+Bottom Style:Straight trouser
+Color Type	:Black
+Dupatta Fabric :	Chiffon
+Lining Attached:	As shown in picture
+Number Of Pieces:3 piece - top + bottom + dupatta
+Product Type:Daily/basic wear
+Season	:Winter wear
+Shirt Fabric:Linen
+Top Fit	:Regular fit
+Top Style	:Long kurta
+Trouser Fabrics :	Linen
+Work Technique :	Embroidered
+Additional Description:
+This exquisite Women's Daily Wear Long Kurta Set  is a winter wardrobe essential. Crafted from luxurious linen, the black ensemble features intricate embroidered details. The set includes a straight trouser in linen and a chiffon dupatta, adding elegance to your look. Stay stylish and cozy in this 3-piece ensemble.
+
+Disclaimer:
+Actual product color may vary slightly from the image.
+
+</div>
+
+<!-- Buttons with link space -->
+<div class="buttons">
+<a href="PASTE_PRICE_LINK_HERE">Price: Rs$50=PKR14000</a>
+<a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/HackyOrder.Html">Buy Now</a>
+<a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/CustomerSupport.Html">Chat With Us</a>
+</div>
+
+</div>
+
+</body>
+</html>
+
