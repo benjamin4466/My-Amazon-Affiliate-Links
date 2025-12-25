@@ -1,84 +1,176 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Amazon Redirect - Chew</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: white;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      position: relative;
-    }
+<meta charset="UTF-8">
+<title>Elegant Embroidered Linen Straight Kurta Set for Winter Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .arrow {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 72px;
-      color: yellow;
-      animation: bounce 1.5s infinite;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    }
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:'Segoe UI', Arial, sans-serif;
+  text-align:center;
+}
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+/* Animations */
+@keyframes goldGlow {
+  0%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+  50%{ box-shadow:0 0 28px rgba(255,215,0,1); }
+  100%{ box-shadow:0 0 8px rgba(255,215,0,.4); }
+}
+@keyframes textGlow {
+  0%{ text-shadow:0 0 6px gold; }
+  50%{ text-shadow:0 0 22px gold; }
+  100%{ text-shadow:0 0 6px gold; }
+}
 
-    .message {
-      margin-top: 80px;
-      background-color: #222;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 20px;
-      color: #ffd700;
-      display: inline-block;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
 
-    img {
-      max-width: 90%;
-      border-radius: 10px;
-      margin-top: 40px;
-    }
-  </style>
+/* Animated Logo */
+.hacky-logo{
+  display:inline-block;
+  margin:15px auto 25px;
+  padding:10px 28px;
+  background:#0b1f4b;
+  border-radius:14px;
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#ffeb3b;
+  animation:goldGlow 2.8s infinite;
+}
+.hacky-logo span{
+  color:#ffffff;
+}
 
-  <script>
-    const amazonLink = "https://www.amazon.com/dp/B0D6KCM8KY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.7JBJQM769BA1&linkCode=tr1&tag=48633-20&linkId=amzn1.campaign.7JBJQM769BA1_1755405568681";
+/* Title */
+h1{
+  color:#FFD700;
+  font-size:34px;
+  margin-bottom:10px;
+  animation:textGlow 2.5s infinite;
+}
 
-    function isInWebView() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /FBAN|FBAV|Instagram|Messenger|Line|TikTok|WebView/i.test(ua);
-    }
+/* Product Info */
+.product-info{
+  font-size:15px;
+  color:#ddd;
+  margin-bottom:30px;
+}
+.product-info span{
+  color:#ffeb3b;
+  font-weight:bold;
+}
 
-    window.onload = function () {
-      if (!isInWebView()) {
-        window.location.href = amazonLink;
-      } else {
-        setTimeout(() => {
-          window.location.href = amazonLink;
-        }, 20000); // 20-second delay for WebView
-      }
-    };
-  </script>
+/* Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+.gallery img{
+  width:350px;
+  height:380px;
+  object-fit:cover;
+  border-radius:16px;
+  animation:goldGlow 3s infinite;
+}
+
+/* Description */
+.description{
+  max-width:900px;
+  margin:45px auto 25px;
+  font-size:16px;
+  line-height:1.9;
+}
+
+/* Buttons */
+.buttons{
+  margin:30px 0 50px;
+}
+.buttons a{
+  display:inline-block;
+  margin:10px;
+  padding:14px 34px;
+  background:#0b1f4b;
+  color:#ffeb3b;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  box-shadow:0 0 14px rgba(0,120,255,.8);
+  transition:.3s;
+}
+.buttons a:hover{
+  box-shadow:0 0 26px gold;
+  transform:translateY(-3px);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  h1{ font-size:26px; }
+  .gallery img{
+    width:92%;
+    height:auto;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="arrow">⬆️</div>
 
-  <div class="message">
-    ⚠️ Tap the <b>three dots ⋮</b> above<br>
-    and select <b>"Open in browser"</b> to continue.
-  </div>
+<div class="container">
 
-  <img src="https://raw.githubusercontent.com/benjamin4466/My-Amazon-Affiliate-Links/main/amazon.jpg" alt="Open in browser">
+<!-- Animated Logo -->
+<div class="hacky-logo">
+  Hacky<span>Finds</span>
+</div>
+
+<h1>Elegant Embroidered Linen Straight Kurta Set for Winter Wear</h1>
+
+<div class="product-info">
+Product Name: <span>Stitched Winter Black White Linen Dress</span> |
+Product ID: <span>EBA3567</span>
+</div>
+
+<!-- Images -->
+<div class="gallery">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhd_T6sd6_YZvYB1L1oa4Wb2ZS2cAyL6cwhqKX_HGe1f38cJY1nNSzhuolPvyZdWtLF40G1kGAfgy_I4ivc8vCZSwpuvAFbN7jpnphr9-IGdTNE_kEMbDbu9RJsmxXhiuvVXP7NkPIDimz903xopT3Mscwtc6L9cG2lmzYZW3PuoWJ8D5-_d_zzbABYcag/s1368/IMG_20251225_232126.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkKwyvNWnEhLrY_0V7iGfcHvTXD28BJciFKki3_hbvxbeW_GSPLLJF3OF2-vDIRewJD_kgkYcAh_R7b2vHhlK-rHB282LoZ5tfNEkRJPJNlPkjJn91tzamJ9lNa271RWmdI1Nt-B9QwxBKv9DRVdJTHglDWhVuZypjnXsyRGYYSjZ5NfHzv10kbkDMXR0/s1368/IMG_20251225_232411.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZxhe32LJPnzuS9-sWBfDyjlcMcxfJkex3bRMUtbiJqZY6DnTUkjeBPOnOO-ZlyHVlEpHvP6Oy3lM3pr6IxxgECViWfY9E-1_DqylYp9j1s0qVcGQ2CxCDGor1jCXXGpfUykajHfLOq8fm9bqqY0aS8BjSoMwd41KKzjiy-l4V1HazPMXCY2tJtpX8ZZQ/s840/cropped_image-173733796972418_8206b957-584c-4ff5-9165-387df4f257c7.jpg">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZxhe32LJPnzuS9-sWBfDyjlcMcxfJkex3bRMUtbiJqZY6DnTUkjeBPOnOO-ZlyHVlEpHvP6Oy3lM3pr6IxxgECViWfY9E-1_DqylYp9j1s0qVcGQ2CxCDGor1jCXXGpfUykajHfLOq8fm9bqqY0aS8BjSoMwd41KKzjiy-l4V1HazPMXCY2tJtpX8ZZQ/s320/cropped_image-173733796972418_8206b957-584c-4ff5-9165-387df4f257c7.jpg">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTXW1y_HbY4jEEpc7yNDtYtki3D3mi0LPLFQqy6RRw7mPgeIAE6JJRTPAw5cLzWBV0yhgJJco8GhLxYbOc2VRJ9dW0mxtsCGX-L9XHm2VsFz8S_D8KcSYMfKxqPI2j1K1i_uxckVjrX1EburEzCixe7prjBqnecL61OYMg11l5zwPSGMiGi4k5ldDrwSA/s320/cropped_image-173763980561261_89d6d771-b2a1-40ca-8164-3a67b808a9d5.jpg">
+</div>
+
+<!-- Description -->
+<div class="description">
+This 2-piece winter wear suit includes a straight kurta and matching trousers, made from fine-quality linen fabric for a soft and comfortable feel. The regular fit kurta features elegant embroidery that adds a simple yet stylish touch, making it perfect for daily or basic wear. The lining is attached as shown in the picture, ensuring a neat look and added comfort. Ideal for winter days, this outfit is easy to wear, breathable, and suitable for everyday use while maintaining a clean and graceful appearance.
+
+
+Disclaimer:
+Actual product color may vary slightly from the image.
+
+</div>
+
+<!-- Buttons with link space -->
+<div class="buttons">
+<a href="PASTE_PRICE_LINK_HERE">Price: Rs:$46|PKR13000</a>
+<a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/HackyOrder.Html">Buy Now</a>
+<a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/CustomerSupport.Html">Chat With Us</a>
+</div>
+
+</div>
+
 </body>
 </html>
 
-<!-- File Name: Chew.html -->
-<!-- Last updated: 2025-07-29 -->
-  
+
+
