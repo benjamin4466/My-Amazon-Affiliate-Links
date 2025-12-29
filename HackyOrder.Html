@@ -139,7 +139,7 @@ hr{opacity:.2}
 const currencyMap={PK:"PKR",IN:"INR",BD:"BDT",US:"USD",GB:"GBP",FR:"EUR",DE:"EUR",NL:"EUR",SG:"SGD",AE:"AED",SA:"SAR",AU:"AUD",CA:"CAD"};
 function autoCurrency(){const c=document.getElementById("country").value;const cur=document.getElementById("currency");if(currencyMap[c])cur.value=currencyMap[c];}
 const orderId="ORD-"+Date.now();document.getElementById("order_id").value=orderId;
-document.getElementById("orderForm").addEventListener("submit",function(e){e.preventDefault();fetch("https://formspree.io/f/mnjaayra",{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}}).then(r=>{if(r.ok){this.classList.add("hidden");document.getElementById("done").classList.remove("hidden");document.getElementById("oid").innerText=orderId;}else alert("Error submitting form");});});
+document.getElementById("orderForm").addEventListener("submit",function(e){e.preventDefault();fetch("<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc8MufNkJF9mOMpi0uLLUGXOzhz_DLoIcdM3wAt8CovCcVOVg/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>",{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}}).then(r=>{if(r.ok){this.classList.add("hidden");document.getElementById("done").classList.remove("hidden");document.getElementById("oid").innerText=orderId;}else alert("Error submitting form");});});
 </script>
 
 </body>
