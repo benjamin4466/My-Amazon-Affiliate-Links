@@ -22,6 +22,25 @@ h1{
   color:#fff;
   text-shadow:0 0 10px gold,0 0 30px goldenrod;
 }
+.banner{
+  overflow:hidden;
+  white-space:nowrap;
+  padding:15px 0;
+}
+.banner-track{
+  display:inline-block;
+  animation:scroll 12s linear infinite;
+}
+.banner img{
+  height:280px;
+  margin:0 15px;
+  border-radius:12px;
+  box-shadow:0 0 18px gold;
+}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 
 /* Grid */
 .grid{
@@ -74,7 +93,15 @@ h1{
 <body>
 
 <h1>Hacky Finds New Premimum collection</h1>
-
+<!-- LIVE BANNER (HEADINGS STYLE) -->
+<div class="banner">
+  <div class="banner-track">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXtlzb3jjr6MbOrFy8GwggdZpPfKWRmFECkNaaTHKyprTPKECgyHjcM2AmKkbyzVlG1S2zcarnZhBwJk9OQaVCweusFqMrNBgFBTFaBQEXGy7Mu2CbGCmNVuJntuLBJxIBAM9Vy4V3kk_w-ybBMAF57ehFeUgBDRVHjlZnEPgQZqnmgpT1qFTLM0Sudu0/s652/IMG_20251223_122431.Png">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfFdFxigi1OOqsvaV5NRPfvrLSTj6lFD9xz47Kp-fC8Z4f4g41L0QVJugPQEs0lMrfUQBukn3V-SkD6dlxctfHUPz495shheLQg6GSdLSa5XY5R-Qs1FDT9rt2LsxQvKwjgddm4PikXMxgMJEXYTutdruFLFLcg7thWX0CC-_szto6cvUwDvTfXh-L5qI/s624/IMG_20251223_122451.Png">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_RtHwY2LDgmcFlvN5jjO3r_mOTVvFSVeRz75zfRjHD9gS7Pmacy3t-HTDe8UhfeTxzW3PW6I2A8rasbXbR7mUsj21FVO65jLvPWGJzbZwEfZKuK_AIv7D7vnfhYHjoLxRsB_HGp9lws8kdtRmuqTU6915lDtZnt9GHZohyFsvSB9OPIyE8S_LZA7_sHg/s644/IMG_20251223_122508.Png">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha9s2rQqEaptPzRYYIRLlnyeNnEOdaUj_TKuykOR9Jj_2TA8A5aFUj_O1zDNXGBSW8HIJgKd9-5RmTyGnkERZ9rxEWWET0wdb76B-s4185CXjmGvEXE4_IAqLShTffoY-kfVhPTA-MxHZZpNDfKqlqrSleZxQti0UJvIknhX35YPm7p74EdHvLl1PemGc/s640/IMG_20251223_122542.Png">
+  </div>
+</div>
 <div class="grid">
 <div class="card">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnymoU5mV53BpmQqwAniw8Fs3Bm6X8ERrGHreaozppCMrjv2Yj-K2GTf1tIXdn9kJAND5lkxHnxhYvZq5_aC3olGndOFyoyf550Y4t82x_H8fQCNytCrQywgDOLhb81ttqJLm-4UbfkDRrRSnyL2G_e7lPPBm6SsmqzAs5OJxY9Oe-az9qi2r-tTIRAVM/s840/cropped_image-173530001600093_30a8b2c9-9a84-4b85-a79e-fd861c306e8b.jpg" alt="Product 2">
