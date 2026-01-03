@@ -86,10 +86,34 @@ body{
   border-radius:15px;
   animation:goldGlow 3s infinite alternate;
 }
+
+/* Gold Glow Animation */
 @keyframes goldGlow{
-  from{box-shadow:0 0 12px gold}
-  to{box-shadow:0 0 38px goldenrod}
+  0%{box-shadow:0 0 8px gold;}
+  100%{box-shadow:0 0 35px goldenrod;}
 }
+
+/* Buy Now Button */
+.buy-btn {
+  display: inline-block;
+  margin-top:10px;
+  padding:10px 25px;
+  background: linear-gradient(45deg, gold, goldenrod);
+  color: black;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px gold;
+  transition: all 0.3s ease;
+}
+.buy-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px goldenrod;
+}
+</style>
+</head>
+
+<body>
 
 /* PRICE */
 .price{
