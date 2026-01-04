@@ -5,7 +5,6 @@
 <title>Hacky Finds New Premimum collection</title>
 
 <style>
-*{box-sizing:border-box}
 body{
   margin:0;
   background:#000;
@@ -14,16 +13,13 @@ body{
   text-align:center;
 }
 
-/* LOGO */
-.logo{
-  font-size:54px;
-  font-weight:900;
-  margin:25px 10px;
-  animation:logoGlow 3.5s infinite alternate;
-}
-@keyframes logoGlow{
-  from{text-shadow:0 0 20px gold}
-  to{text-shadow:0 0 45px goldenrod}
+/* Title */
+h1{
+  margin:30px 10px;
+  font-size:46px;
+  font-weight:800;
+  color:#fff;
+  text-shadow:0 0 10px gold,0 0 30px goldenrod;
 }
 
 /* LIVE BANNER */
@@ -46,25 +42,6 @@ body{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
-
-/* FILTER BUTTONS */
-.filters{
-  margin:30px 10px;
-}
-.filters button{
-  background:#0b1b3f;
-  color:yellow;
-  border:none;
-  padding:11px 26px;
-  margin:6px;
-  font-size:15px;
-  border-radius:30px;
-  cursor:pointer;
-  box-shadow:0 0 15px gold;
-}
-.filters button:hover{
-  background:#123c9a;
-}
 /* Grid */
 .grid{
   display:grid;
@@ -80,7 +57,7 @@ body{
   align-items:center;
 }
 .card img{
-  width:310px;
+  width:240px;
   height:320px;
   object-fit:cover;
   border-radius:15px;
@@ -105,13 +82,19 @@ body{
   text-decoration: none;
   box-shadow: 0 0 10px gold;
   transition: all 0.3s ease;
-
+}
+.buy-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px goldenrod;
+}
 </style>
 </head>
 
 <body>
-<div class="logo">HackyFinds ✨</div>
 
+<h1>Hacky Finds New Premimum collection</h1>
+</div>
+</div>
 <!-- LIVE BANNER (HEADINGS STYLE) -->
 <div class="banner">
   <div class="banner-track">
@@ -121,54 +104,29 @@ body{
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha9s2rQqEaptPzRYYIRLlnyeNnEOdaUj_TKuykOR9Jj_2TA8A5aFUj_O1zDNXGBSW8HIJgKd9-5RmTyGnkERZ9rxEWWET0wdb76B-s4185CXjmGvEXE4_IAqLShTffoY-kfVhPTA-MxHZZpNDfKqlqrSleZxQti0UJvIknhX35YPm7p74EdHvLl1PemGc/s640/IMG_20251223_122542.Png">
   </div>
 </div>
-
-<!-- FILTERS -->
-<div class="filters">
-  <button onclick="filterItems('All')">All</button>
-  <button onclick="filterItems('PartyWear'>Party Wear</button>
-  <button onclick="filterItems('HandMade'>Hande Made </button>
-  <button onclick="filterItems('Mens Wear')">MensWear</button>
-  <button onclick="filterItems('Stitched Wear')">Stitched Wear</button>
-</div>
-
-<!-- PRODUCTS (25 CARDS) -->
 <div class="grid">
-<!-- COPY THIS BLOCK 25 TIMES -->
-<div class="card gallery)
-<div class="card Party">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvKZ7aOJbyGgnGzzSXy-LMhLahIJ2uTpb8Hg2qe79oGKA3Q9hZNpJZ2X5vwCyLaKGUo7lp8mMMjFjGMl0L8_RYbDqnez-51bSAysUSo7HAwvQljL5MBRtvzjeR-FAZEmWB5_vZ6_qb5-nO2GSCleWmoKymzPgizcCl0f_usuSTGnsR-vzCUg-FAeuD_jY/s720/1767422060605.png">
-  <div class="price">Premium Party Collection</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/PeachWhiteMaxi.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzd_lI6rDlJaw5gnsep4pqYOulaTDm46Yc5afk5RjAdQ-sf8S-_i7Q9vOukOBD6yvnvYM0nyVpTTsQIDrkgFLvIp7G3FVc3lXHTZ5DRdmConCNYl4lRzjBHDreKO3XeFVXsysyRFjMdFaRTHUI-BLDdn4lB8ibBqUe-ugD-c02toR_4RCPqVXurnxqPP8/s1400/media_image-ea97bb1944734feca15c2189e54c80e2_68c53146-42fa-4199-8a68-eb0a9673996c.jpg">
-  <div class="price">Premium Party Collection</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/YellowGreenMaxi.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNqqFu7YWqKy7Uls4iXwJg0gwm2faRTCHHLGmc2S9_-FgJKeO1zyQu2ix1wnxe4I4dJWsTC0YviGDgNrGyWV285yR0VRb7hYwCJ2n0PIqL_9nL5TyegqABnYKtOCGd7jVPSdG3t56r104HPrloNTB3_dpcUnmC82C9Ntfks7HVlMKcMuPwlIqFRX2EGq8/s840/media_image-b23c2b46cc354bf19f45b8326051909c_9c48683c-225c-47d4-a">
-  <div class="price">Premium Party Collection</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/ShockingPinkDress.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8iRgQ7ql14PQ9u8zXvS0l3kbp-xkX8RHOvJGUm8n-_GZOXVH5j1FPPE2ss-Bod4j2sHk379SZK2bdLgYxtH5V8krWaYaB1mr1fgNOG3MtWHUrnrqE2c5EKplQHyeW-OY4E2pZ319vMaHk0xO8g_0KEH7xrEgUcFBLDKVmMpXtZwvQ9k4eP0urks62yMM/s320/cropped_image-172786311149025_64e9b196-2b8e-4c19-8d23-f92e477467e7%20(1).jpg">
-  <div class="price">Premium Party Collection</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/PeachWhiteMaxi.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIVe7zvhFyinvViyIxUB2Eo71mGAyI26tSOedBoNeDzcZtDJSzpW6zF2ewcsvKAIffX1wXC5eIpMtD1wOaUZCMoFXu0e54mdr39TPinaiLS6xOUmVPgF9NS-PsNhyphenhyphenAL_GV01O2NmCypnDxqK1sLYNo8d_TL2b31fxABE9OH_UiZ2M9FxpxNzwm_UvznUE/s1999/IMG_20251224_022146.Png">
-  <div class="price">Premium Party Collection</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/PartyDressess.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiavroTxp9H3dMO4nYys59a7Mb93pV1yNBgdsEyP69erRRRignKAMvFkDt_LEZsNXOWrYPSyoMDJGdRlhNI63C0ADrZQk2H_tonUd0HkswoA45F-8N7VINZLl3bmz1-MGogLrbOouEq-h6Rv-T8hyphenhyphenlKQx32v1OukVVufN6mrATOdEqtYTxsFcpLjmXwgRk/s1500/DSC00814_3a2dd622-a1c7-4e80-ac60-0bedf8f36b34.Png">
-  <div class="Rs:$31.7|PKR8889">$31.7|PKR8890</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/GreenStitchedTwoPieceKhaddarDress.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="cardParty">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMEb47-KqHfR-yLL5VTuIGydBRTHBLfaHl6uYIVTQYFIVlOAyoMUH4HZ3gKw5gohe_8GGOX4H6-STxVRMCTVnrhOjTzFB4Ku-336g-BQ01uUYd20_ZUfZajF_RL8C33wTCP47rt0ikIjrf6h74IMgpmm8LTbD1-TWn9H_wRsWM1SJnhJFe72suPvo_z7g/s1400/media_image-e0faab349cf949529f35338efe9875a4.Png">
-  <div class="Rs:$31.7|PKR8889">$31.7|PKR888</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/BlueWhiteWinterDress.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0aIqeNYcYLxeDj6IYayT4o36XNt2BoEjGaCl6wonmo2k-QTuWTWycDC1_u_VA9JtKAlUQyPhPKlaw-kAr16Bv-YYOe2_G0hyhFm2ekgFsEqBDvbd9jrIiFuEAKsABsPj16l1rNp-K5-4uFE_xxBGSxB8hzp2lKtvUlEA9hjh_ofMejRQ_eNSSD3GCTdM/s1732/IMG_20251224_035424.jpg">
-  <div class="price">Shope Hand Made Products</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/Sweaters.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFcgxLbG35a6-ehaDD5d5_cAGiU688UNysOMlwDw11LyBdH8TuOmNMiJ8ErMK6PWKW1b4CKnuYoJvajSF1dQ-szV-2W9qtWX-rpu-59fYdLJClX1fQDDedaVtG5fqk1ygLbtPWwjmGfVpB10T6PDQZU041Ke7Ek9gIBC-DfOIuZH3cMia4O5mQ2lz_rDg/s1401/media_image-70b7090529944adca6e37d293c378ed9_87748608-a41d-42ae-a29a-dc83faef347a.Png">
-  <div class="PKR18000$">Daily Wear</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/BlueDailyWear.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkKwyvNWnEhLrY_0V7iGfcHvTXD28BJciFKki3_hbvxbeW_GSPLLJF3OF2-vDIRewJD_kgkYcAh_R7b2vHhlK-rHB282LoZ5tfNEkRJPJNlPkjJn91tzamJ9lNa271RWmdI1Nt-B9QwxBKv9DRVdJTHglDWhVuZypjnXsyRGYYSjZ5NfHzv10kbkDMXR0/s1368/IMG_20251225_232411.jpg">
-  <div class="Party Wear"></div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/BlackLinenDress.Html" class="buy-btn" target="_blank">Buy Now</a>
-<div class="card Party">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKXqgCGXSTrBKj2ARMEhfG68kbscxu8rwwZdl7n-a6uu3gb2kPxfMtfDjC5VMGpbuUUNcIrDi6Kx1Hvlu_40nTZzcytbAHYiKVEwBiCMfUCfqTzIryphMT-_w70J7Wb4xCX6s6JXnuIxQ2x28wkWc6p9v54TUZ9lX0dSxyFSQbapjHOGmFZgkH4wrOqLo/s1350/cropped_image-172898956317875_ee452425-5350-495b-8ad7-aadcfc4ec49e.jpg">
-  <div class="Party Wear"></div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/MawraPeachWhiteMaxi.Html" class="buy-btn" target="_blank">Buy Now</a>
+<div class="card">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnymoU5mV53BpmQqwAniw8Fs3Bm6X8ERrGHreaozppCMrjv2Yj-K2GTf1tIXdn9kJAND5lkxHnxhYvZq5_aC3olGndOFyoyf550Y4t82x_H8fQCNytCrQywgDOLhb81ttqJLm-4UbfkDRrRSnyL2G_e7lPPBm6SsmqzAs5OJxY9Oe-az9qi2r-tTIRAVM/s840/cropped_image-173530001600093_30a8b2c9-9a84-4b85-a79e-fd861c306e8b.jpg" alt="Product 2">
+  <a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/GreyBlueMaxi.Html" target="_blank" class="buy-btn">Buy Now</a>
 </div>
+<div class="card">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg823rj5p3M9YCx-mn-zdDW0t1PKJcZ42-gjfOL0NEJcMmbLTJPQOrzZUQXrpgnFg4FhT_JU4aZfqSf8e7_aTWGW1FTK9t3lnknR50vhslEnRVObwHUrq-ibu2onk_YaY9GSi_rQZ9dBNODilmCallVWsBJesLwwhzHT-wEquPyvnY5G5UmMyqg4e_RBcU/s700/IMG_20251222_030227.png" alt="Product 3">
+  <a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/Drama.Html" target="_blank" class="buy-btn">Buy Now</a>
+</div>
+<div class="card">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvX-6U3KcVuxhHKawhX7dJPo3qXvjiTKb9Ejx80J0IUb8nqMvaJ0klIc3zr3KI7kEUkswXVhZdBUXoaJdQj-N1-VyjfnK7-6cH5qSAqqdHdNS7ja9RfPuFfFymqe02jVWHGfVTpDGb3Ia9QQejjVCTK3iMQ2Zryk9pkP_RrLLbyLMHVAJnmck8dvr4AAE/s720/IMG_20251222_032304.png" alt="Product 4">
+  <a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/AyezaVelvetDress.Html" target="_blank" class="buy-btn">Buy Now</a>
+</div>
+<div class="card">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE2i6h7-4DdBKJbheSg1p6LW4eQAHKagy8fpmNljsTfkXbdGnvYT9DGeFWc9XhZfkUSl5d_MooJArB10WPINlK6kDR2p4rQPHYVYiJLAeLbnTEOToFdV-DV9x0d7LiqrfnSY9-QCj8vApnNU2xqOh7PsyytWojlXv3jh9rYOTAjky2oCoHHlh4gvmy0Ig/s840/0010_37_bf612350-76b9-4c59-9146-5665521cb320.jpg" alt="Product 5">
+  <a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/BottleGreenShararaDress.Html" target="_blank" class="buy-btn">Buy Now</a>
+</div>
+<div class="card">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO6FKlXI4TWVtah-71-4uectPPelKONx9iZleiUWVFIf-v07dHAfZm1KVcv5w7gn-xyO5Fp5nl9YyrUJFfJrrhuHMEFWiKxdmJ8itZAOI6LhEzUeX5VrOhsxS3BQfvVnKdPry1TvY2Q780dunJRL34XdOR5FwIogFmrbIL4X7gVshMF8TsDmwOOQpr7Qs/s1080/1765895257478.png" alt="Product 6">
+  <a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/AyezaWhiteDress.Html" target="_blank" class="buy-btn">Buy Now</a>
+</div>
+
+
 <div class="Party Wear">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMOVRl1MUtUZc78SZe4LAmqvNkqVEEwXqqBmbc6FrpzCw6hM8kefQP3Fwa0BqsE88GBx9mDcOqAPIyZIDv58vOoqEe7QuT1VR10uZcaI3NeHiVd6koBCWhOTmaWbe_fVhsA9dITFoVx3hwdRPZwW2ybp7B2O3ZjVYTAoULZNyhQKQuplZ3SYWqDS6bMFU/s320/media_image-2336d5bd01bd4c30a177d7269bed43ff.jpg">
   <div class="price">Stitched Winter</div><a href="https://benjamin4466.github.io/My-Amazon-Affiliate-Links/MaroonLinenDress.Html" class="buy-btn" target="_blank">Buy Now</a>
