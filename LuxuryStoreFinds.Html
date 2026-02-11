@@ -1,34 +1,73 @@
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Luxury Store Finds</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:#111;
-            font-family:Arial;
-        }
-        .btn{
-            padding:18px 35px;
-            font-size:20px;
-            color:white;
-            background:red;
-            border:none;
-            border-radius:10px;
-            cursor:pointer;
-        }
-    </style>
+<title>Open in External Browser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#000;
+    font-family:Arial;
+    text-align:center;
+    color:white;
+}
+.btn{
+    padding:18px 35px;
+    font-size:18px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+.note{
+    margin-top:15px;
+    font-size:14px;
+    color:#ccc;
+}
+</style>
+
+<script>
+function openExternal() {
+
+    var url = "https://www.youtube.com/playlist?list=PLsEmz0WLlQLACiBXDk8Z5Lr9-Khnb8qzz";
+    var ua = navigator.userAgent.toLowerCase();
+
+    // iOS Devices
+    if (/iphone|ipad|ipod/.test(ua)) {
+        window.location.href = url;
+        return;
+    }
+
+    // Android Chrome force
+    var chromeURL = "googlechrome://" + url.replace(/^https?:\/\//, '');
+    window.location.href = chromeURL;
+
+    // Fallback normal
+    setTimeout(function(){
+        window.location.href = url;
+    }, 800);
+}
+</script>
+
 </head>
 
 <body>
 
-<a href="intent:/youtube.com/playlist?list=PLsEmz0WLlQLACiBXDk8Z5Lr9-Khnb8qzz&si=GloeKFPM9sw5i5Mp#Intent;package=com.google.android.youtube;scheme=https;end">
-    <button class="btn">Open YouTube Channel</button>
-</a>
+<div>
+    <button class="btn" onclick="openExternal()">
+        Open in External Browser
+    </button>
+
+    <div class="note">
+        If using TikTok/Pinterest tap ••• → Open in Browser
+    </div>
+</div>
 
 </body>
 </html>
+
