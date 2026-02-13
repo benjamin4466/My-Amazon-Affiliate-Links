@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Open in External Browser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#000;
+    font-family:Arial;
+    text-align:center;
+    color:white;
+}
+.btn{
+    padding:18px 35px;
+    font-size:18px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+.note{
+    margin-top:15px;
+    font-size:14px;
+    color:#ccc;
+}
+</style>
+
+<script>
+function openExternal() {
+
+    var url = "https://www.tiktok.com/@usafinds";
+    var ua = navigator.userAgent.toLowerCase();
+
+    // iOS Devices
+    if (/iphone|ipad|ipod/.test(ua)) {
+        window.location.href = url;
+        return;
+    }
+
+    // Android Chrome force
+    var chromeURL = "googlechrome://" + url.replace(/^https?:\/\//, '');
+    window.location.href = chromeURL;
+
+    // Fallback normal
+    setTimeout(function(){
+        window.location.href = url;
+    }, 800);
+}
+</script>
+
+</head>
+
+<body>
+
+<div>
+    <button class="btn" onclick="openExternal()">
+        Open in External Browser
+    </button>
+
+    <div class="note">
+        If using TikTok/Pinterest tap ••• → Open in Browser
+    </div>
+</div>
+
+</body>
+</html>
